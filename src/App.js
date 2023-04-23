@@ -1,5 +1,8 @@
+
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import bars from './img/bars.png'
 
 
 import Header from './componets/header';
@@ -8,11 +11,14 @@ import Home from './pages/Home';
 import Todos from './pages/Todos';
 import Footer from './componets/footer';
 import Details from './pages/Details';
+import Categories from './pages/Categories';
+import SearchPage from './pages/Busca';
 
 
 export default function App() {
   return (
     <BrowserRouter>
+
 
       <Header />
 
@@ -22,9 +28,13 @@ export default function App() {
 
           <Route path='/' element={<Home />} />
 
-          <Route path='/TodosOsAnimes' element={<Todos />} />
+          <Route path='/todososanimes' element={<Todos />} />
 
-          <Route path='/Details/:id' element={<Details/>}/>
+          <Route path='/details/:id' element={<Details/>}/>
+
+          <Route path='/categories/:id' element={<Categories/>}/>
+
+          <Route path='/paginadebusca' element={<SearchPage/>}/>
 
 
         </Routes>

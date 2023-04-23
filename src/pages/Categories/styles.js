@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const BoxTodos = styled.div`
 
-    
+    margin-top: 5.6rem;
 
     h1{
         text-align: center;
         color: orange;
-        margin: 5.6rem 0 2rem 0;
+        margin: 2rem 0 ;
     }
 
 `
@@ -61,7 +61,7 @@ export const Btn = styled.button`
     padding: 0.5rem;
     border-radius: 0.7rem;
     background-color: #F46D1B;
-    margin: 2rem 0;
+    margin: 4rem 0;
 
     svg{
         color: white;

@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export  const Rodape = styled.footer`
 
-margin-top: 10% ;
+
 
 img{
+    bottom: 0%;
     width: 100%;
 }
 `
