@@ -2,8 +2,10 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Banner_id, Container_id } from './styles';
-import not from '../../img/not_found.png.png'
+import { Container, Banner_id, Container_id, Box_id} from './styles';
+import { ImHeart, ImStarFull } from "react-icons/im";
+import not from '../../img/not_found.png'
+
 
 export default function Details() {
   const { id } = useParams();
@@ -22,8 +24,10 @@ export default function Details() {
   }
 
   return (
+
     <Container>
-      <Container_id key={anime.id}>
+
+      <div key={anime.id}>
 
 
         <Banner_id src={anime?.attributes?.coverImage?.small
@@ -31,22 +35,32 @@ export default function Details() {
           // eslint-disable-next-line no-undef
           : `${not}`} />
 
+        <Container_id>
 
-        <img src={anime.attributes.posterImage.small} />
-        <h1>{anime.attributes.canonicalTitle}</h1>
-        <p>
-          <strong>Tipo:</strong> {anime.attributes.showType}
-        </p>
-        <p>
-          <strong>Status:</strong> {anime.attributes.status}
-        </p>
-        <p>
-          <strong>Episódios:</strong> {anime.attributes.episodeCount}
-        </p>
-        <p>
-          <strong>Descrição:</strong> {anime.attributes.description}
-        </p>
-      </Container_id>
+          <img src={anime.attributes.posterImage.small} />
+
+        
+
+        
+
+          <h1>{anime.attributes.canonicalTitle}</h1><br />
+          <p>
+            {anime.attributes.synopsis}
+          </p>
+
+        </Container_id>
+
+        <Box_id>
+
+          <button>VER TRAILER</button><br />
+          <span>aprovado por {anime.attributes.averageRating}% <br />da Comunidade</span>
+          <p><ImHeart className='heart'/> # {anime.attributes.popularityRank}  Mais Popular</p>
+          <p><ImStarFull className='star'/> # {anime.attributes.ratingRank}  Mais Classificado</p>
+
+        </Box_id>
+
+      </div>
+
     </Container>
   );
 }

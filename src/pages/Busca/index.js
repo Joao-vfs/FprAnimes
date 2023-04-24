@@ -10,7 +10,7 @@ export default function SearchPage() {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    fetch(`https://kitsu.io/api/edge/anime?filter[text]=${encodeURIComponent(query)}`)
+    fetch(`https://kitsu.io/api/edge/anime?filter[text]=${encodeURIComponent(query)}/`)
       .then((response) => response.json())
       .then((data) => setResults(data.data));
   }, [query]);

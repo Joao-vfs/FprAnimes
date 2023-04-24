@@ -5,7 +5,7 @@ export  const Rodape = styled.footer`
 
 
 img{
-    bottom: 0%;
+    margin-top: 10%;
     width: 100%;
 }
 `

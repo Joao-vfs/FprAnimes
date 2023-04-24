@@ -16,12 +16,8 @@ color:white;
 
 `
 export const Lupa = styled.img`
-
-
-    
-    display: inline-block;
     position: absolute;
-    right: 2.6%;
+    right: 3.5%;
     margin-top: 2.4rem;
     cursor: pointer;
 `

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Busca, InputContainer, Lupa } from './styles';
 
 export default function SearchInput() {
   const [text, setText] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setText(event.target.value);
@@ -12,13 +13,13 @@ export default function SearchInput() {
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      window.location.href = `/paginadebusca?q=${text}`;
+      navigate(`/paginadebusca?q=${text}`);
     }
   };
 
   const handleButtonClick = (event) => {
     event.preventDefault();
-    window.location.href = `/paginadebusca?q=${text}`;
+    navigate(`/paginadebusca?q=${text}`);
   };
 
   return (
