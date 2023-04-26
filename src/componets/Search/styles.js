@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const InputContainer = styled.div`
-    
-`
-
 export const Busca = styled.input`
 
 height: 1.5rem;
@@ -15,9 +11,4 @@ padding: 0.7rem;
 color:white;
 
 `
-export const Lupa = styled.img`
-    position: absolute;
-    right: 3.5%;
-    margin-top: 2.4rem;
-    cursor: pointer;
-`
+

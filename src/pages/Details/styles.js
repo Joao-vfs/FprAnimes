@@ -16,25 +16,26 @@ width: 100%;
 
 `
 
+export const Image_id = styled.div`
+
+img{
+    width:180px;
+    height: 260px;
+    border-radius: 1rem;
+    margin: -2rem 2.5rem;
+}
+
+`
+
 export const Container_id = styled.div`
 
 display: flex;
 justify-content: center;
 flex-direction: column;
-margin-left: 20%;
+margin: -15% 0 0 18%;
 padding: 0 1rem;
 
-p{
-    font-size: 16px;
-}
 
-img{
-    position: absolute;
-    left: 6%;
-    top:48%;
-    width:180px;
-    border-radius: 10px;
-}
 
 `
 
@@ -44,7 +45,7 @@ display: flex;
 flex-direction: column;
 justify-content: left;
 gap: 15px;
-margin: 8.5% 0 10% 6%;
+margin: 0 2.5rem;
 
 
 span{
@@ -55,6 +56,7 @@ span{
 button{
     width: 180px;
     height: 50px;
+    margin-top: 3rem;
     background-color: #F46D1B;
     color: white;
     border-color: black ;

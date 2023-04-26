@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
-import { Cabecalho, Logo } from './styles';
-import logo from '../../img/Untitled-1 4.png';
+import { Cabecalho } from './styles';
+import logo from '../../img/logo (2).png';
 import { FaBars } from 'react-icons/fa';
 import SearchInput from '../Search/SearchInput';
 import Sidebar from '../sidebar';
 
 
-export default function Header() {
+export default function Header_Home() {
 
   const [text, setText] = useState('');
   const [searchText, setSearchText] = useState('');
@@ -50,9 +50,9 @@ export default function Header() {
 
         {sidebar && <Sidebar active={setSidebar} />}
       </div>
-      <Link to="/">
-        <Logo src={logo} />
-      </Link>
+      
+        <img src={logo} />
+      
       <SearchInput
         text={searchText}
         handleChange={handleInputChange}

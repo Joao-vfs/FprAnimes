@@ -1,19 +1,17 @@
 import styled from "styled-components";
 
+import banner from '../../img/banner.png'
+
 
 
 export const Cabecalho = styled.nav`
 
   display: flex;
   justify-content: space-between;
-  background-color: #000000;
-  opacity: 1;
+  background-image: url(${banner});
+  height: 71vh;
+  
 
-  .Lupa{
-    position: absolute;
-    top: 7%;
-    right: 3%;
-  }
   .Bars{
     position: absolute;
     left: -1%;
@@ -26,6 +24,20 @@ export const Cabecalho = styled.nav`
   }
 
 
+
+  img{
+    width: 192px;
+    height: 118px;
+    margin: 1rem 0 0 -37em ;
+
+  }
+
+  .Lupa{
+    position: absolute;
+    top: 7%;
+    right: 3%;
+  }
+
   a{
     text-decoration: none;
     color:red;
@@ -34,10 +46,4 @@ export const Cabecalho = styled.nav`
   ul{
     list-style: none;
   }
-`
-
-export const Logo= styled.img`
-
-margin: 5% 0 0 -320% ;
-
 `

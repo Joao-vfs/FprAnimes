@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: #484747;
+  background-color: #F46D1B;
   position: fixed;
   height: 100%;
   top: 0px;
@@ -9,7 +9,7 @@ export const Container = styled.div`
   width: 300px;
   animation: showSidebar .4s;
   overflow: auto;
-  color: #F46D1B;
+  color: #484747;
 
    svg {
     color: white;

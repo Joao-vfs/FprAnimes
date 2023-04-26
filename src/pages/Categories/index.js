@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Animes, AnimesList, BoxTodos, Container, Btn } from './styles'
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa'
+import Header from '../../componets/header'
 
 export default function Categories() {
   const { id } = useParams()
@@ -35,6 +36,8 @@ export default function Categories() {
   }, [id])
 
   return (
+    <>
+    <Header />
     <BoxTodos>
       <h1>CATEGORIAS</h1>
 
@@ -83,5 +86,6 @@ export default function Categories() {
         )}
       </Container>
     </BoxTodos>
+    </>
   )
 }

@@ -4,6 +4,7 @@ import { Animes, AnimesList, BoxTodos, Btn, Container } from './styles'
 import {FaArrowCircleLeft, FaArrowCircleRight} from 'react-icons/fa'
 
 import { Link } from 'react-router-dom'
+import Header from '../../componets/header'
 
 export default function Todos() {
 
@@ -26,6 +27,8 @@ export default function Todos() {
   }, [url])
 
   return (
+    <>
+    <Header />
     <BoxTodos>
 
       <h1>Todos</h1>
@@ -98,5 +101,6 @@ export default function Todos() {
 
 
     </BoxTodos>
+    </>
   )
 }

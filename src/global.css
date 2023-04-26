@@ -5,13 +5,14 @@
 }
 
 html,body,#root{
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-left: solid 1rem #F46D1B;
   font-family: Oswald;
 }
 
 ::-webkit-scrollbar{
-  background-color: #262626;
+  background-color: #F46D1B;
   width: 5px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -20,6 +21,6 @@ html,body,#root{
 }
 
 ::-webkit-scrollbar-thumb{
-  background-color: #F46D1B;
+  background-color: #262626;
   border-radius: 15px
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AnimesList } from '../Categories/styles';
 import { Animes, BoxTodos } from '../Todos/styles';
 import { useLocation, Link } from 'react-router-dom';
+import Header from '../../componets/header';
 
 export default function SearchPage() {
   const { search } = useLocation();
@@ -16,6 +17,9 @@ export default function SearchPage() {
   }, [query]);
 
   return (
+    <>
+    <Header />
+
     <BoxTodos>
       <h1>Página de busca</h1>
       {results && results.length > 0 ? (
@@ -33,5 +37,6 @@ export default function SearchPage() {
         <p>Nenhum resultado encontrado para a pesquisa "{query}".</p>
       )}
     </BoxTodos>
+    </>
   );
 }
