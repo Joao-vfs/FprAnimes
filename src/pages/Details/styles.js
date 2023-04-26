@@ -10,13 +10,13 @@ h1{
 
 `
 
-export const Banner_id = styled.img`
+export const Banner = styled.img`
 
 width: 100%;
 
 `
 
-export const Image_id = styled.div`
+export const ImageDetails = styled.div`
 
 img{
     width:180px;
@@ -27,7 +27,7 @@ img{
 
 `
 
-export const Container_id = styled.div`
+export const ContainerDetails= styled.div`
 
 display: flex;
 justify-content: center;
@@ -39,7 +39,7 @@ padding: 0 1rem;
 
 `
 
-export const Box_id = styled.div`
+export const DetailsDiv = styled.div`
 
 display: flex;
 flex-direction: column;

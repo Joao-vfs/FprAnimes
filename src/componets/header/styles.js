@@ -38,6 +38,6 @@ export const Cabecalho = styled.nav`
 
 export const Logo= styled.img`
 
-margin: 5% 0 0 -320% ;
+margin: 10px 800px 0 0 ;
 
 `

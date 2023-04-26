@@ -1,10 +1,8 @@
-
 import React, { useState, useEffect } from 'react'
-import { Container, Content } from './styles'
+
 import { FaTimes } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
-
-
+import { SidebarContainer, SidebarContent, SidebarList, SidebarListItem } from './styles';
 
 export default function Sidebar({ active }) {
 
@@ -21,19 +19,20 @@ export default function Sidebar({ active }) {
   }, [])
 
   return (
-    <Container sidebar={active}>
+    <SidebarContainer sidebar={active}>
       <FaTimes onClick={closeSidebar} />
-      <Content key={categories.id}>
+      <SidebarContent key={categories.id}>
         <h1>CATEGORIAS</h1>
-        {categories.map(categorie => {
-          return (
-            <ul>
-              <Link to={`/Categories/${categorie.id}`}><li >{categorie.attributes.title}</li></Link>
-            </ul>
-          )
-        })}
-      </Content>
-    </Container>
+        <>
+          {categories.map(categorie => {
+            return (
+              <Link to={`/Categories/${categorie.id}`}>
+                <span>{categorie.attributes.title}</span>
+              </Link>
+            )
+          })}
+        </>
+      </SidebarContent>
+    </SidebarContainer>
   )
 }
-

@@ -57,8 +57,9 @@ export default function Home() {
             
 
             
-            <h2><strong><BiStar /> Animes</strong> Mais Populares</h2>
+            
             <Pop_Container>
+              <h2><strong><BiStar /> Animes</strong> Mais Populares</h2>  
                 {pop.map(pops => {
                     return (
                         <div key={pop.id}>
@@ -95,8 +96,9 @@ export default function Home() {
 
             </Carousel_div>
 
-            <h2><strong><BiLike /> Animes</strong> Mais bem Classificados</h2>
+            
             <Classfilds_Container>
+               <h2><strong><BiLike /> Animes</strong> Mais bem Classificados</h2> 
                 {classified.map(classifieds => {
                     return (
                         <div key={classified.id}>

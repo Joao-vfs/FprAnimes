@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const SidebarContainer = styled.div`
   background-color: #F46D1B;
   position: fixed;
   height: 100%;
   top: 0px;
-  left: 0px;
+  left: ${({ sidebar }) => sidebar ? '0px' : '-300px'};
   width: 300px;
-  animation: showSidebar .4s;
+  animation: ${({ sidebar }) => sidebar ? 'showSidebar .4s' : 'hideSidebar .4s'};
   overflow: auto;
   color: #484747;
 
-   svg {
+  svg {
     color: white;
     width: 30px;
     height: 30px;
@@ -30,23 +30,33 @@ export const Container = styled.div`
       width: 300px;
     }
   }
+
+  @keyframes hideSidebar {
+    from {
+      opacity: 1;
+      width: 300px;
+    }
+    to {
+      opacity: 0;
+      width: 0;
+    }
+  }
 `;
 
-export const Content = styled.div`
+export const SidebarContent = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  margin: 20% 0 10% 10% ;
+  margin: 20% 0 10% 10%;
   cursor: pointer;
 
-  li{
-  transition: all 0.3s;
-  text-decoration: none;
-  color: white;
-}
+ a {
+    transition: all 0.3s;
+    color: white;
+  }
 
-  li:hover{
-  transform: scale(0.9)
+ a:hover {
+    transform: scale(0.9);
   }
 `;
