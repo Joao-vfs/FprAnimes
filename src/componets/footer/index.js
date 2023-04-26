@@ -25,7 +25,7 @@ export const Rodape = styled.footer`
 export default function Footer() {
   return (
     <Rodape>
-      <Link to={'/TodosOsAnimes'}></Link>
+      <Link to={'/TodosOsAnimes'}><img src={rodape}/></Link>
     </Rodape>
   )
 }
