@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Banner, ContainerDetails, ImageDetails, DetailsDiv } from './styles';
+import { Container, ImageDetails, DetailsDiv } from './styles';
 import { ImHeart, ImStarFull } from 'react-icons/im';
 import notFoundImg from '../../img/not_found.png';
 import Header from '../../componets/header';

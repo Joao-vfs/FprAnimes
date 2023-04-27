@@ -7,8 +7,23 @@ export const BoxTodos = styled.div`
     h1{
         text-align: center;
         color: orange;
-        margin: 5.6rem 0 2rem 0;
+        margin-bottom: 2rem;
     }
+
+    @media (min-width: 300px) and (max-width: 700px) {
+
+        h1{
+            font-size: 35px;
+    }
+}
+
+@media (min-width: 0px) and (max-width:400px) {
+
+h1{
+    font-size: 20px;
+}
+}
+
 
 `
 
@@ -18,6 +33,16 @@ export const AnimesList = styled.ul`
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr) );
         column-gap: 3rem;
         row-gap: 4rem;
+
+@media (min-width: 300px) and (max-width: 700px) {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr) );
+ 
+
+}
+
+@media (min-width: 0px) and (max-width:400px) {
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr) );
+    }
 `
 
 export const Animes = styled.li`
@@ -47,6 +72,32 @@ export const Animes = styled.li`
     a:hover{
         transform: scale(1.1);
     }
+
+    @media (min-width: 300px) and (max-width: 700px) {
+
+        img{
+        width: 100px;
+        margin-bottom: 1rem;
+    }
+
+    span{
+        font-size: 18px;
+    }
+
+}
+
+@media (min-width: 0px) and (max-width: 400px) {
+
+                
+img{
+width: 65px;
+}
+
+span{
+font-size: 13px;
+}
+
+}
 `
 export const Container = styled.div`
 
@@ -54,18 +105,49 @@ display: flex;
 justify-content: right;
 margin: 0 3rem 0 1rem ;
 gap: 1rem;
+
+@media (min-width: 300px) and (max-width: 700px) {
+
+
+
+}
 `
 
 export const Btn = styled.button`
 
     padding: 0.5rem;
     border-radius: 0.7rem;
+    border: none;
     background-color: #F46D1B;
     margin: 2rem 0;
+
 
     svg{
         color: white;
         font-size: 30px;
         text-align: center;
     }
+
+    @media (min-width: 300px) and (max-width: 700px) {
+
+padding: 0.2rem;
+margin: 2rem 0;
+
+svg{
+    font-size: 25px;  
+} 
+
+}
+
+@media (min-width: 0px) and (max-width: 400px) {
+
+padding: 0.2rem;
+margin: 1.5rem 0;
+
+svg{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+} 
+}
 `

@@ -13,7 +13,7 @@ export default function Footer() {
       <Gato src={Yuzu} />
       <h1>Ainda está procurando algo pra assistir?<strong><br/>
         Confira o nosso acervo completo</strong></h1>
-        <Link to={'/TodosOsAnimes'}>
+        <Link to={'/all'}>
         <button>VER TUDO</button>
         </Link>
         <div>

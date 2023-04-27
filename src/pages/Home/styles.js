@@ -14,18 +14,24 @@ export const Box = styled.div`
     color: #f46d1b;
   }
 
-  @media (max-width: 400px) {
+  @media (min-width: 300px) and (max-width: 700px) {
 
   padding: 0.5rem;
-  text-align: center;
-  margin-top: 5rem;
+  margin-top: 2rem;
 
+  h2 {
+    font-size: 20px;
+  }
 
-    h2 {
-    color: #34ac40;
-    font-size: auto;
   }
-  }
+
+  @media (min-width: 0px) and (max-width: 400px) {
+
+    h2{
+      font-size: 15px;
+    }
+
+}
 `;
 
 
@@ -48,13 +54,23 @@ export const Pop_Container = styled.div`
     transform: scale(1.1);
   }
 
-  @media (max-width: 400px) {
+  @media (min-width: 300px) and (max-width: 700px) {
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  img {
+    max-width: 90px;
+    margin: 0.5rem 0 ;
   }
+
+}
+
+@media (min-width: 0px) and (max-width: 400px) {
+
+  img {
+    max-width: 70px;
+    margin: 0.2rem 0 ;
+  }
+
+}
 `;
 
 export const Carousel_div = styled.div`
@@ -65,6 +81,14 @@ export const Carousel_div = styled.div`
     min-width: 100%;
     min-height: auto; 
   }
+
+@media (min-width: 0px) and (max-width: 400px) {
+
+img{
+  height: 90px;
+}
+
+}
 
 `;
 
@@ -89,12 +113,21 @@ export const Classfilds_Container = styled.div`
   }
 
 
-  @media (max-width: 400px) {
+  @media (min-width: 300px) and (max-width: 700px) {
 
-display: flex;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
+    img {
+    max-width: 90px;
+    margin: 0.5rem 0 ;
+  }
+  }
+
+  @media (min-width: 0px) and (max-width: 400px) {
+
+    img {
+    max-width: 70px;
+    margin: 0.2rem 0 ;
+  }
+
 }
   
 `;

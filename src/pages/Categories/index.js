@@ -58,7 +58,7 @@ export default function Categories() {
       <AnimesList>
         {animes.map((anime) => (
           <Animes key={anime.id}>
-            <Link to={`/Details/${anime.id}`}>
+            <Link to={`/details/${anime.id}`}>
               <img
                 src={
                   anime.attributes?.posterImage?.small ||

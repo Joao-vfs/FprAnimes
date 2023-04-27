@@ -24,7 +24,7 @@ export default function Header_Home() {
       const query = encodeURIComponent(text.trim());
       const response = await fetch(`https://kitsu.io/api/edge/anime?`);
       const results = response.data;
-      navigate(`/paginadebusca?q=${query}&page=${page}`, { state: { results } });
+      navigate(`/saerch?q=${query}&page=${page}`, { state: { results } });
       setText('');
     }
   };

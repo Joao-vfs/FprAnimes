@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-pascal-case */
-/* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from 'react'
 
 
@@ -7,13 +5,12 @@ import React, { useEffect, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-import { Box, Pop_Container, Classfilds_Container,  Image_Carousel, Carousel_div} from './styles'
+import { Box, Pop_Container, Classfilds_Container,  Carousel_div} from './styles'
 
 import { BiStar, BiLike } from "react-icons/bi";
 
 import { Link } from 'react-router-dom'
 
-import banner from '../../img/banner.png'
 
 import banner1 from '../../img/banner interno 1.png'
 import banner2 from '../../img/banner interno 2.png'
@@ -63,7 +60,7 @@ export default function Home() {
                 {pop.map(pops => {
                     return (
                         <div key={pop.id}>
-                            <Link to={`/Details/${pops.id}`}>
+                            <Link to={`/details/${pops.id}`}>
                                 <img src={pops.attributes.posterImage.small} />
                             </Link>
 
@@ -102,7 +99,7 @@ export default function Home() {
                 {classified.map(classifieds => {
                     return (
                         <div key={classified.id}>
-                            <Link to={`Details/${classifieds.id}`}>
+                            <Link to={`details/${classifieds.id}`}>
                                 <img src={classifieds.attributes.posterImage.small} />
                             </Link>
 

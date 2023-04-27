@@ -35,7 +35,7 @@ export default function SearchPage() {
           <AnimesList>
             {results.map((anime) => (
               <Animes key={anime.id}>
-                <Link to={`/Details/${anime.id}`}>
+                <Link to={`/details/${anime.id}`}>
                   <img src={anime.attributes.posterImage.medium} alt={anime.attributes.canonicalTitle} />
                 </Link>
                 <span>{anime.attributes.canonicalTitle}</span>

@@ -22,6 +22,35 @@ svg{
     list-style: none;
   }
 
+  @media (min-width: 300px) and (max-width: 700px) {
+    svg{
+    position: absolute;
+    left: 2%;
+  }
+  }
+
+  a{
+    font-size: 17px;
+  }
+
+
+
+
+  @media (min-width: 0px) and (max-width: 400px) {
+    svg{
+    position: absolute;
+    left: 1%;
+    width: 20px;
+    height: 20px;
+  }
+
+  a{
+    font-size: 12px;
+  }
+
+
+}
+
 `
 
 export const Cabecalho = styled.nav`
@@ -37,6 +66,38 @@ export const Cabecalho = styled.nav`
     right: 10%;
     background-color: transparent;
     border: none;
+  }
+
+  @media (min-width: 300px) and (max-width: 700px) {
+  
+  padding: 0.3rem;
+
+  img{
+    width: 80px;
+    height: 50px;
+  }
+
+  .lupa{
+    width: 15px;
+    height: 15px;
+  }
+
+  }
+
+  @media (min-width: 0px) and (max-width: 400px) {
+
+    padding: 0.3rem;
+
+    img{
+      width: 80px;
+      height: 50px;
+    }
+
+    .lupa{
+      width: 10px;
+      height: 10px;
+    }
+
   }
 
 `

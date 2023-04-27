@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { FaTimes } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
-import { SidebarContainer, SidebarContent, SidebarList, SidebarListItem } from './styles';
+import { SidebarContainer, SidebarContent } from './styles';
 
 export default function Sidebar({ active }) {
 
@@ -26,7 +26,7 @@ export default function Sidebar({ active }) {
         <>
           {categories.map(categorie => {
             return (
-              <Link to={`/Categories/${categorie.id}`}>
+              <Link to={`/categories/${categorie.id}`}>
                 <span>{categorie.attributes.title}</span>
               </Link>
             )

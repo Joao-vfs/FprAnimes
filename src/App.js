@@ -12,7 +12,7 @@ import Todos from './pages/Todos';
 import Footer from './componets/footer';
 import Details from './pages/Details';
 import Categories from './pages/Categories';
-import SearchPage from './pages/Busca';
+import SearchPage from './pages/Search';
 import Sidebar from './componets/sidebar';
 
 
@@ -22,20 +22,20 @@ export default function App() {
 
 
       <></>
-      <Sidebar/>
+      
       <>
 
         <Routes>
 
           <Route path='/' element={<Home />} />
 
-          <Route path='/todososanimes' element={<Todos />} />
+          <Route path='/all' element={<Todos />} />
 
           <Route path='/details/:id' element={<Details/>}/>
 
           <Route path='/categories/:id' element={<Categories/>}/>
 
-          <Route path='/paginadebusca' element={<SearchPage/>}/>
+          <Route path='/search' element={<SearchPage/>}/>
 
 
         </Routes>

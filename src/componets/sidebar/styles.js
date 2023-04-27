@@ -43,32 +43,21 @@ export const SidebarContainer = styled.div`
   }
 
 
-  @media (max-width: 400px) {
-    
-  background-color: #F46D1B;
-  position: fixed;
-  height: 100%;
-  top: 0px;
-  left: ${({ sidebar }) => sidebar ? '0px' : '-100px'};
-  width: 100px;
-  animation: ${({ sidebar }) => sidebar ? 'showSidebar .4s' : 'hideSidebar .4s'};
-  overflow: auto;
-  color: #484747;
-  z-index: 1;
+  @media (min-width: 300px) and (max-width: 700px) {
+  
+  left: ${({ sidebar }) => sidebar ? '0px' : '-150px'};
+  width: 150px;
+
 
   h1{
+    margin-top: 2rem;
     font-size: 20px;
   }
 
-
-
   svg {
     color: white;
-    width: 20px;
-    height: 20px;
-    margin-top: 12px;
-    margin-left: 12px;
-    cursor: pointer;
+    width: 30px;
+    height: 30px;
   }
 
   @keyframes showSidebar {
@@ -77,7 +66,43 @@ export const SidebarContainer = styled.div`
       width: 0;
     }
     to {
+      
+      width: 150px;
+    }
+  }
+
+  @keyframes hideSidebar {
+    from {
       opacity: 1;
+      width: 150px;
+    }
+    to {
+      opacity: 0;
+      width: 0;
+    }
+  }
+
+  @media (min-width: 0px) and (max-width: 400px) {
+    left: ${({ sidebar }) => sidebar ? '0px' : '-100px'};
+  width: 100px;
+
+  h1{
+  font-size: 18px;
+  }
+  
+  svg {
+    color: white;
+    width: 20px;
+    height: 20px;
+  }
+
+  @keyframes showSidebar {
+    from {
+      opacity: 0;
+      width: 0;
+    }
+    to {
+      
       width: 100px;
     }
   }
@@ -85,13 +110,15 @@ export const SidebarContainer = styled.div`
   @keyframes hideSidebar {
     from {
       opacity: 1;
-      width: 300px;
+      width: 100px;
     }
     to {
       opacity: 0;
       width: 0;
     }
   }
+  }
+
   }
 `;
 

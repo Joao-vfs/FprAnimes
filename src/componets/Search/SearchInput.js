@@ -14,13 +14,13 @@ export default function SearchInput() {
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      navigate(`/paginadebusca?q=${text}`);
+      navigate(`/search?q=${text}`);
     }
   };
 
   const handleButtonClick = (event) => {
     event.preventDefault();
-    navigate(`/paginadebusca?q=${text}`);
+    navigate(`/search?q=${text}`);
   };
 
   return (
@@ -32,8 +32,8 @@ export default function SearchInput() {
         onChange={handleChange}
         onKeyPress={handleKeyPress}
       />
-      <Link to={`/paginadebusca?q=${text}`}>
-        <button onClick={handleButtonClick}><img src={Lupa} alt='lupa'/></button> 
+      <Link to={`/sarch?q=${text}`}>
+        <button onClick={handleButtonClick}><img src={Lupa} alt='lupa' className='lupa'/></button> 
       </Link>
     </div>
   );
