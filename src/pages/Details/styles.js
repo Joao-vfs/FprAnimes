@@ -8,44 +8,33 @@ h1{
     color:orange
 }
 
-`
+img{
+    width: 100%;
+}
 
-export const Banner = styled.img`
-
-width: 100%;
 
 `
 
 export const ImageDetails = styled.div`
 
-img{
-    width:180px;
-    height: 260px;
-    border-radius: 1rem;
-    margin: -2rem 2.5rem;
-}
-
-`
-
-export const ContainerDetails= styled.div`
-
 display: flex;
-justify-content: center;
-flex-direction: column;
-margin: -15% 0 0 18%;
-padding: 0 1rem;
+padding: 1rem;
 
-
-
+img{
+    max-width: auto;
+    max-height: auto;
+    border-radius: 1rem ;
+    margin: -3rem 2rem 0 2rem ;
+}
 `
 
 export const DetailsDiv = styled.div`
 
 display: flex;
 flex-direction: column;
-justify-content: left;
+justify-content: center;
 gap: 15px;
-margin: 0 2.5rem;
+margin-left: 3rem;
 
 
 span{
@@ -56,13 +45,13 @@ span{
 button{
     width: 180px;
     height: 50px;
-    margin-top: 3rem;
     background-color: #F46D1B;
     color: white;
-    border-color: black ;
+    border: none ;
     border-radius: 10px;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }
 .star{
     color: #FFE145;

@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-import { Box, Pop_Container, Classfilds_Container, Image_Home, Image_Carousel, Carousel_div, Banner } from './styles'
+import { Box, Pop_Container, Classfilds_Container,  Image_Carousel, Carousel_div} from './styles'
 
 import { BiStar, BiLike } from "react-icons/bi";
 
@@ -64,7 +64,7 @@ export default function Home() {
                     return (
                         <div key={pop.id}>
                             <Link to={`/Details/${pops.id}`}>
-                                <Image_Home src={pops.attributes.posterImage.small} />
+                                <img src={pops.attributes.posterImage.small} />
                             </Link>
 
                         </div>
@@ -103,7 +103,7 @@ export default function Home() {
                     return (
                         <div key={classified.id}>
                             <Link to={`Details/${classifieds.id}`}>
-                                <Image_Home src={classifieds.attributes.posterImage.small} />
+                                <img src={classifieds.attributes.posterImage.small} />
                             </Link>
 
                         </div>

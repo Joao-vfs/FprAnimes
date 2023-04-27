@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Busca } from './styles';
-import { FcSearch } from "react-icons/fc";
+import Lupa from '../../img/magnifying-glass.png'
 
 export default function SearchInput() {
   const [text, setText] = useState('');
@@ -27,13 +27,13 @@ export default function SearchInput() {
     <div>
       <Busca
         type="text"
-        placeholder="Pesquisar anime"
+        placeholder="Buscar"
         value={text}
         onChange={handleChange}
         onKeyPress={handleKeyPress}
       />
       <Link to={`/paginadebusca?q=${text}`}>
-        <FcSearch className='Lupa' onClick={handleButtonClick}/>
+        <button onClick={handleButtonClick}><img src={Lupa} alt='lupa'/></button> 
       </Link>
     </div>
   );

@@ -1,43 +1,42 @@
 import styled from "styled-components";
 
+export const SidebarContainer = styled.div`
 
-
-export const Cabecalho = styled.nav`
-
-  display: flex;
-  justify-content: space-between;
-  background-color: #000000;
-  opacity: 1;
-
-  .Lupa{
+svg{
     position: absolute;
-    top: 7%;
-    right: 3%;
-  }
-  .Bars{
-    position: absolute;
-    left: -1%;
+    left: 1%;
+    top: 2%;
     color: white;
     width: 30px;
     height: 30px;
-    margin-top: 32px;
-    margin-left: 32px;
     cursor: pointer;
   }
 
-
+  
   a{
     text-decoration: none;
-    color:red;
+    color:white;
   }
 
   ul{
     list-style: none;
   }
+
 `
 
-export const Logo= styled.img`
+export const Cabecalho = styled.nav`
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000;
+  opacity: 1;
 
-margin: 10px 800px 0 0 ;
+
+  button{
+    position: relative;
+    right: 10%;
+    background-color: transparent;
+    border: none;
+  }
 
 `

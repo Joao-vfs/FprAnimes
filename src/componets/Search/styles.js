@@ -9,12 +9,12 @@ export const Busca = styled.input`
   padding: 0.7rem;
   color: white;
 
-  @media screen and (min-width: 768px) {
+  @media  (min-width: 768px) {
     width: 50%;
     margin: 2rem auto;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     width: 30%;
   }
 `;

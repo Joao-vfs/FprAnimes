@@ -13,6 +13,7 @@ import Footer from './componets/footer';
 import Details from './pages/Details';
 import Categories from './pages/Categories';
 import SearchPage from './pages/Busca';
+import Sidebar from './componets/sidebar';
 
 
 export default function App() {
@@ -21,7 +22,7 @@ export default function App() {
 
 
       <></>
-
+      <Sidebar/>
       <>
 
         <Routes>

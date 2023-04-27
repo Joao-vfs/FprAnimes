@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
-import { Cabecalho } from './styles';
+import { Cabecalho, SidebarContainer } from './styles';
 import logo from '../../img/logo (2).png';
 import { FaBars } from 'react-icons/fa';
 import SearchInput from '../Search/SearchInput';
@@ -44,20 +44,27 @@ export default function Header_Home() {
   };
 
   return (
-    <Cabecalho>
-      <div>
-        <FaBars className='Bars' onClick={handleToggleSidebar} />
+    <>
+      <SidebarContainer>
+
+        <FaBars  onClick={handleToggleSidebar} />
 
         {sidebar && <Sidebar active={setSidebar} />}
-      </div>
+
+      </SidebarContainer>
+
+      <Cabecalho>
       
         <img src={logo} />
+        
+      
       
       <SearchInput
         text={searchText}
         handleChange={handleInputChange}
         handleKeyPress={handleEnterKeyPress}
         handleButtonClick={handleSearch}
+       
       />
       
 
@@ -72,5 +79,6 @@ export default function Header_Home() {
         </div>
       )}
     </Cabecalho>
+    </>
   );
 }

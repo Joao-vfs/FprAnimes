@@ -27,14 +27,14 @@ export default function Details() {
     <>
       <Header />
       <Container>
-        <Banner src={coverImageSrc} />
+        <img src={coverImageSrc} />
         <ImageDetails>
           <img src={posterImageSrc} alt="Anime poster" />
-        </ImageDetails>
-        <ContainerDetails>
+        <div>
           <h1>{anime.attributes.canonicalTitle}</h1>
           <p>{anime.attributes.synopsis}</p>
-        </ContainerDetails>
+        </div>
+        </ImageDetails>
         <DetailsDiv>
           <button>VER TRAILER</button>
           <br />

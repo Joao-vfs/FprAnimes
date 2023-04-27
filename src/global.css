@@ -11,6 +11,14 @@ html,body,#root{
   font-family: Oswald;
 }
 
+@media (max-width: 400px) {
+  html,body,#root{
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-left: solid 0.5rem #F46D1B;
+  font-family: Oswald;
+}}
+
 ::-webkit-scrollbar{
   background-color: #F46D1B;
   width: 5px;
