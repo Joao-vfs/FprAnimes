@@ -5,15 +5,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import bars from './img/bars.png'
 
 
-import Header from './componets/header';
+import Header from './componets/Header';
 
 import Home from './pages/Home';
 import Todos from './pages/Todos';
-import Footer from './componets/footer';
+import Footer from './componets/Footer';
 import Details from './pages/Details';
 import Categories from './pages/Categories';
 import SearchPage from './pages/Search';
-import Sidebar from './componets/sidebar';
+import Sidebar from './componets/SideBar';
 
 
 export default function App() {

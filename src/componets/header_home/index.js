@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { Cabecalho, SidebarContainer } from './styles';
 import logo from '../../img/logo (2).png';
-import { FaBars } from 'react-icons/fa';
 import SearchInput from '../Search/SearchInput';
-import Sidebar from '../sidebar';
 
 
 export default function Header_Home() {
 
   const [text, setText] = useState('');
   const [searchText, setSearchText] = useState('');
-  const [sidebar, setSidebar] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -39,19 +36,10 @@ export default function Header_Home() {
     }
   };
 
-  const handleToggleSidebar = () => {
-    setSidebar(!sidebar);
-  };
 
   return (
     <>
-      <SidebarContainer>
 
-        <FaBars  onClick={handleToggleSidebar} />
-
-        {sidebar && <Sidebar active={setSidebar} />}
-
-      </SidebarContainer>
 
       <Cabecalho>
       

@@ -2,9 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { AnimesList } from '../Categories/styles';
 import { Animes, BoxTodos } from '../Todos/styles';
 import { useLocation, Link } from 'react-router-dom';
-import Header from '../../componets/header';
+import Header from '../../componets/Header';
+import { Contente } from '../Home/styles';
+import { SidebarClosed } from '../../componets/SideBar/styles';
+import Sidebar from '../../componets/SideBar';
+import { FaBars } from 'react-icons/fa';
+import { SearchContent } from './styles';
 
 export default function SearchPage() {
+
+  const [sidebar, setSidebar] = useState(false);
+
+  const handleToggleSidebar = () => {
+    setSidebar(!sidebar);
+  };
 
   const { search } = useLocation();
   const query = new URLSearchParams(search).get('q');
@@ -25,9 +36,20 @@ export default function SearchPage() {
 
   return (
     <>
-      <Header />
+          <Contente>
+      
+      <SidebarClosed>
+        <FaBars onClick={handleToggleSidebar} />
+        {sidebar && <Sidebar active={setSidebar} />}
+      </SidebarClosed>
 
-      <BoxTodos>
+        <Header/>
+        
+        </Contente>
+
+        <SearchContent>
+
+      
         <h1>Página de busca</h1>
         {loading ? (
           <p>Carregando resultados...</p>
@@ -45,7 +67,8 @@ export default function SearchPage() {
         ) : (
           <p>Nenhum resultado encontrado para a pesquisa "{query}".</p>
         )}
-      </BoxTodos>
+      
+      </SearchContent>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Busca } from './styles';
+import { Busca, ContainerInput, InputContent } from './styles';
 import Lupa from '../../img/magnifying-glass.png'
 
 export default function SearchInput() {
@@ -11,7 +11,7 @@ export default function SearchInput() {
     setText(event.target.value);
   };
 
-  const handleKeyPress = (event) => {
+  const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
       navigate(`/search?q=${text}`);
@@ -24,17 +24,19 @@ export default function SearchInput() {
   };
 
   return (
-    <div>
-      <Busca
+    <ContainerInput>
+      <InputContent>
+      <input
         type="text"
         placeholder="Buscar"
         value={text}
         onChange={handleChange}
-        onKeyPress={handleKeyPress}
-      />
+        onKeyDown={handleKeyDown}
+      ></input>
       <Link to={`/sarch?q=${text}`}>
         <button onClick={handleButtonClick}><img src={Lupa} alt='lupa' className='lupa'/></button> 
       </Link>
-    </div>
+      </InputContent>
+    </ContainerInput>
   );
 }

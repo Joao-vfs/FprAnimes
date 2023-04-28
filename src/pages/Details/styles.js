@@ -2,41 +2,24 @@ import styled from "styled-components";
 
 
 
-export const Container = styled.section`
+export const Container = styled.div`
+
+margin-top: -6rem;
+border-left: solid 3.5rem #F46D1B;
+z-index: -1;
 
 h1{
     color:orange
 }
 
-img{
-    width: 100%;
-}
 
-@media (min-width: 300px) and (max-width: 700px) {
 
-    h1{
-        font-size: 18px;
-    }
+  img{
+    
+    width: 100%;  
 
-    p{
-        font-size: 12px;
-    }
 
 }
-
-@media (min-width: 0px) and (max-width: 400px) {
-
-    h1{
-        font-size: 12px;
-    }
-
-    p{
-        font-size: 8px;
-        font-weight: bold;
-    }
-
-}
-
 
 `
 
@@ -46,33 +29,10 @@ display: flex;
 padding: 1rem;
 
 img{
-    max-width: 180px;
-    max-height: auto;
+    width: 180px;
+    height: 280px;
     border-radius: 1rem ;
     margin: -3rem 2rem 0 2rem ;
-}
-@media (min-width: 300px) and (max-width: 700px) {
-
-    padding: 0.5rem;
-
-    img{
-        width: 100px;
-        height: 150px;
-        margin: -3rem 1rem 0 1rem ;
-}
-
-}
-
-@media (min-width: 0px) and (max-width: 400px) {
-
-    padding: 0.2rem;
-
-    img{
-        width: 80px;
-        height: 100px;
-        margin: -3rem 0.5rem 0 0.5rem ;
-}
-
 }
 
 `
@@ -84,6 +44,7 @@ flex-direction: column;
 justify-content: center;
 gap: 15px;
 margin-left: 3rem;
+padding-bottom: 10rem;
 
 
 span{
@@ -108,44 +69,6 @@ button{
 
 .heart{
     color: #FF4545
-}
-
-@media (min-width: 300px) and (max-width: 700px) {
-
-gap: 5px;
-margin-left: 1rem;
-
-
-
-span{
-    font-size: 12px;
-}
-
-button{
-    width: 100px;
-    height: 40px;
-    font-size: 12px;
-}
-}
-
-@media (min-width: 0px) and (max-width: 400px) {
-
-gap: 5px;
-margin-left: 0.5rem;
-
-
-
-span{
-    font-size: 8px;
-}
-
-button{
-    width: 80px;
-    height: 30px;
-    font-size: 10px;
-}
-
-
 }
 
 `

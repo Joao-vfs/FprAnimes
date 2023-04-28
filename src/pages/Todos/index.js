@@ -4,9 +4,20 @@ import { Animes, AnimesList, BoxTodos, Btn, Container } from './styles'
 import {FaArrowCircleLeft, FaArrowCircleRight} from 'react-icons/fa'
 
 import { Link } from 'react-router-dom'
-import Header from '../../componets/header'
+import Header from '../../componets/Header'
+
+import { Contente } from '../Home/styles';
+import { SidebarClosed } from '../../componets/SideBar/styles';
+import Sidebar from '../../componets/SideBar';
+import { FaBars } from 'react-icons/fa';
 
 export default function Todos() {
+
+  const [sidebar, setSidebar] = useState(false);
+
+  const handleToggleSidebar = () => {
+    setSidebar(!sidebar);
+  };
 
   const [animes, setAnimes] = useState([])
 
@@ -28,7 +39,17 @@ export default function Todos() {
 
   return (
     <>
-    <Header />
+              <Contente>
+      
+      <SidebarClosed>
+        <FaBars onClick={handleToggleSidebar} />
+        {sidebar && <Sidebar active={setSidebar} />}
+      </SidebarClosed>
+
+        <Header/>
+        
+        </Contente>
+
     <BoxTodos>
 
       <h1>Todos</h1>
@@ -62,7 +83,7 @@ export default function Todos() {
         {animes.map(anime => {
           return (
             <Animes key={animes.id}>
-              <Link to={`/Details/${anime.id}`}>
+              <Link to={`/details/${anime.id}`}>
                 <img
                   src={anime.attributes?.posterImage?.small
                     ? anime.attributes?.posterImage?.small

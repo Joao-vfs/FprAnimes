@@ -4,7 +4,7 @@ import { Cabecalho, Logo, SidebarContainer } from './styles';
 import logo from '../../img/Untitled-1 4.png';
 import { FaBars } from 'react-icons/fa';
 import SearchInput from '../Search/SearchInput';
-import Sidebar from '../sidebar';
+import Sidebar from '../SideBar';
 
 
 export default function Header() {
@@ -15,9 +15,6 @@ export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleChange = (event) => {
-    setText(event.target.value);
-  };
 
   const handleSearch = async (page = 1) => {
     if (text.trim()) {
@@ -47,11 +44,6 @@ export default function Header() {
 
     <>
     
-      <SidebarContainer>
-        <FaBars className='Bars' onClick={handleToggleSidebar} />
-
-        {sidebar && <Sidebar active={setSidebar} />}
-      </SidebarContainer>
       
       <Cabecalho>
       <Link to="/">

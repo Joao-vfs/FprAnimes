@@ -1,5 +1,29 @@
 import styled from 'styled-components';
 
+
+export const SidebarClosed = styled.div`
+  
+  padding: 1rem;
+  background-color: #F46D1B;
+  
+
+  svg{
+    color: white;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  ul {
+    list-style: none;
+  }
+`
+
 export const SidebarContainer = styled.div`
   background-color: #F46D1B;
   position: fixed;
@@ -16,8 +40,10 @@ export const SidebarContainer = styled.div`
     color: white;
     width: 30px;
     height: 30px;
-    margin-left: 0.7rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
     cursor: pointer;
+    
   }
 
   @keyframes showSidebar {
@@ -42,84 +68,6 @@ export const SidebarContainer = styled.div`
     }
   }
 
-
-  @media (min-width: 300px) and (max-width: 700px) {
-  
-  left: ${({ sidebar }) => sidebar ? '0px' : '-150px'};
-  width: 150px;
-
-
-  h1{
-    margin-top: 2rem;
-    font-size: 20px;
-  }
-
-  svg {
-    color: white;
-    width: 30px;
-    height: 30px;
-  }
-
-  @keyframes showSidebar {
-    from {
-      opacity: 0;
-      width: 0;
-    }
-    to {
-      
-      width: 150px;
-    }
-  }
-
-  @keyframes hideSidebar {
-    from {
-      opacity: 1;
-      width: 150px;
-    }
-    to {
-      opacity: 0;
-      width: 0;
-    }
-  }
-
-  @media (min-width: 0px) and (max-width: 400px) {
-    left: ${({ sidebar }) => sidebar ? '0px' : '-100px'};
-  width: 100px;
-
-  h1{
-  font-size: 18px;
-  }
-  
-  svg {
-    color: white;
-    width: 20px;
-    height: 20px;
-  }
-
-  @keyframes showSidebar {
-    from {
-      opacity: 0;
-      width: 0;
-    }
-    to {
-      
-      width: 100px;
-    }
-  }
-
-  @keyframes hideSidebar {
-    from {
-      opacity: 1;
-      width: 100px;
-    }
-    to {
-      opacity: 0;
-      width: 0;
-    }
-  }
-  }
-
-  }
 `;
 
 export const SidebarContent = styled.div`
@@ -139,25 +87,4 @@ export const SidebarContent = styled.div`
     transform: scale(0.9);
   }
 
-  @media (max-width: 400px) {
-
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  margin: 20% 0 10% 10%;
-  cursor: pointer;
-
- a {
-    transition: all 0.3s;
-    color: white;
-    font-size: 16px;
-  }
-
- a:hover {
-    transform: scale(0.9);
-  }
-
-
-  }
 `;

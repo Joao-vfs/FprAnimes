@@ -1,25 +1,12 @@
 import styled from "styled-components";
 
 export const BoxTodos = styled.div`
-
+    border-left: solid 3.5rem #F46D1B;
     h1{
         text-align: center;
         color: orange;
-        margin: 2rem 0 ;
     }
 
-    @media (min-width: 300px) and (max-width:700px) {
-        h1{
-            font-size: 28px;
-        }
-    }
-
-    @media (min-width: 0px) and (max-width:400px) {
-
-        h1{
-            font-size: 20px;
-        }
-    }
 
 `
 
@@ -30,13 +17,6 @@ export const AnimesList = styled.ul`
         column-gap: 3rem;
         row-gap: 4rem;
 
-    @media (min-width: 300px) and (max-width:700px) {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr) );
-    }
-
-    @media (min-width: 0px) and (max-width:400px) {
-        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr) );
-    }
 
 `
 
@@ -68,31 +48,6 @@ export const Animes = styled.li`
         transform: scale(1.1);
     }
 
-    @media (min-width: 300px) and (max-width: 700px) {
-
-                
-        img{
-        width: 100px;
-    }
-
-    span{
-        font-size: 18px;
-    }
-
-    }
-
-    @media (min-width: 0px) and (max-width: 400px) {
-
-                
-img{
-width: 65px;
-}
-
-span{
-font-size: 13px;
-}
-
-}
 `
 export const Container = styled.div`
 
@@ -115,26 +70,4 @@ export const Btn = styled.button`
         font-size: 30px;
     }
 
-    @media (min-width: 300px) and (max-width: 700px) {
-
-    padding: 0.2rem;
-    margin: 2rem 0;
-
-    svg{
-        font-size: 25px;  
-    } 
-
-    }
-
-    @media (min-width: 0px) and (max-width: 400px) {
-
-    padding: 0.2rem;
-    margin: 1.5rem 0;
-
-    svg{
-        color: white;
-        font-size: 20px;
-        text-align: center;
-    } 
-    }
 `

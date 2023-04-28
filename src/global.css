@@ -7,7 +7,6 @@
 html,body,#root{
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  border-left: solid 1rem #F46D1B;
   font-family: Oswald;
 }
 

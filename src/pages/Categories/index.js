@@ -2,9 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Animes, AnimesList, BoxTodos, Container, Btn } from './styles'
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa'
-import Header from '../../componets/header'
+import Header from '../../componets/Header'
+
+import { Contente } from '../Home/styles';
+import { SidebarClosed } from '../../componets/SideBar/styles';
+import Sidebar from '../../componets/SideBar';
+import { FaBars } from 'react-icons/fa';
 
 export default function Categories() {
+
+  const [sidebar, setSidebar] = useState(false);
+
+  const handleToggleSidebar = () => {
+    setSidebar(!sidebar);
+  };
+
   const { id } = useParams()
   const [animes, setAnime] = useState([])
   const [url, setUrl] = useState(
@@ -37,7 +49,16 @@ export default function Categories() {
 
   return (
     <>
-    <Header />
+              <Contente>
+      
+      <SidebarClosed>
+        <FaBars onClick={handleToggleSidebar} />
+        {sidebar && <Sidebar active={setSidebar} />}
+      </SidebarClosed>
+
+        <Header/>
+        
+        </Contente>
     <BoxTodos>
       <h1>CATEGORIAS</h1>
 
