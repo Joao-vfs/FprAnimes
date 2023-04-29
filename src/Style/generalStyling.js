@@ -1,16 +1,9 @@
 import styled from "styled-components";
 
-export const BoxTodos = styled.div`
+export const ContainerGeneral = styled.div`
 
     border-left: solid 3.5rem #F46D1B;
-
-    h1{
-        text-align: center;
-        color: orange;
-        
-    }
-
-
+    padding: 2rem;
 `
 
 export const AnimesList = styled.ul`
@@ -51,22 +44,21 @@ export const Animes = styled.li`
         transform: scale(1.1);
     }
 `
-export const Container = styled.div`
+export const ContenteGeneral = styled.div`
 
 display: flex;
 justify-content: right;
-margin: 0 3rem 0 1rem ;
 gap: 1rem;
+margin: 3rem 0;
 
 `
 
-export const Btn = styled.button`
+export const ButtonGeneral = styled.button`
 
     padding: 0.5rem;
     border-radius: 0.7rem;
     border: none;
     background-color: #F46D1B;
-    margin-bottom: 10rem ;
     cursor: pointer;
     
 

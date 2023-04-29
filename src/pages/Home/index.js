@@ -1,30 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, } from "react";
+import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import {
-  Box,
-  Pop_Container,
-  Classfilds_Container,
-  Carousel_div,
-  Contente,
-} from "./styles";
-
-import { BiStar, BiLike } from "react-icons/bi";
-
-import { FaBars } from "react-icons/fa";
-
-import { Link } from "react-router-dom";
-
-import banner1 from "../../img/banner interno 1.png";
-import banner2 from "../../img/banner interno 2.png";
-import banner3 from "../../img/banner interno 3.png";
-import Header_Home from "../../componets/Header_Home";
-import Sidebar from "../../componets/SideBar";
-
-import { SidebarClosed } from "../../componets/SideBar/styles";
+import HeaderHome from "../../componets/headerHome";
+import Sidebar from "../../componets/Side-bar";
 import Tooltip from "../../componets/Tootlip";
 
+import { HomeContainer, Content, PopContainer, CarouselContainer, ClassfildsContainer} from "./styles";
+import { SidebarClosed } from "../../componets/Side-bar/styles";
+
+import { BiStar, BiLike } from "react-icons/bi";
+import { FaBars } from "react-icons/fa";
+
+import banner1 from "../../assets/images/banner interno 1.png";
+import banner2 from "../../assets/images/banner interno 2.png";
+import banner3 from "../../assets/images/banner interno 3.png";
 
 export default function Home({ active }) {
   const [sidebar, setSidebar] = useState(false);
@@ -54,19 +45,20 @@ export default function Home({ active }) {
       .then((data) => setClassified(data.data));
   }, []);
 
+
   return (
     <>
-      <Contente>
+      <Content>
         <SidebarClosed>
           <FaBars onClick={handleToggleSidebar} />
           {sidebar && <Sidebar active={setSidebar} />}
         </SidebarClosed>
 
-        <Header_Home />
-      </Contente>
+        <HeaderHome />
+      </Content>
 
-      <Box>
-        <Pop_Container>
+      <HomeContainer>
+        <PopContainer>
           <h2>
             <strong>
               <BiStar /> Animes
@@ -84,34 +76,32 @@ export default function Home({ active }) {
                 description={pops.attributes.description ?? "Sem descrição"}
               >
                 <Link to={`details/${pops.id}`}>
-                <img
-                  src={pops.attributes.posterImage.small}
-                  alt={pops.attributes.canonicalTitle}
-                />
+                  <img
+                    src={pops.attributes.posterImage.small}
+                    alt={pops.attributes.canonicalTitle}
+                  />
                 </Link>
               </Tooltip>
             );
           })}
-        </Pop_Container>
+        </PopContainer>
 
-        <Carousel_div>
-          <Carousel_div>
-            <Carousel
-              showThumbs={false}
-              showStatus={false}
-              showArrows={false}
-              autoPlay={true}
-              infiniteLoop={true}
-              transitionTime={3}
-            >
-              {carouselBanners.map((img) => (
-                <img src={img} key={img} />
-              ))}
-            </Carousel>
-          </Carousel_div>
-        </Carousel_div>
+        <CarouselContainer>
+          <Carousel
+            showThumbs={false}
+            showStatus={false}
+            showArrows={false}
+            autoPlay={true}
+            infiniteLoop={true}
+            transitionTime={3}
+          >
+            {carouselBanners.map((img) => (
+              <img src={img} key={img} alt="Banner do Carrossel da pagina Home" />
+            ))}
+          </Carousel>
+        </CarouselContainer>
 
-        <Classfilds_Container>
+        <ClassfildsContainer>
           <h2>
             <strong>
               <BiLike /> Animes
@@ -126,19 +116,21 @@ export default function Home({ active }) {
                 averageRating={classifieds.attributes.averageRating}
                 popularityRank={classifieds.attributes.popularityRank}
                 ratingRank={classifieds.attributes.ratingRank}
-                description={classifieds.attributes.description ?? "Sem descrição"}
+                description={
+                  classifieds.attributes.description ?? "Sem descrição"
+                }
               >
                 <Link to={`details/${classifieds.id}`}>
-                <img
-                  src={classifieds.attributes.posterImage.small}
-                  alt={classifieds.attributes.canonicalTitle}
-                />
+                  <img
+                    src={classifieds.attributes.posterImage.small}
+                    alt={classifieds.attributes.canonicalTitle}
+                  />
                 </Link>
               </Tooltip>
             );
           })}
-        </Classfilds_Container>
-      </Box>
+        </ClassfildsContainer>
+      </HomeContainer>
     </>
   );
 }

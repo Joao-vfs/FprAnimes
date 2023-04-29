@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Container, ImageDetails, DetailsDiv } from "./styles";
-import { ImHeart, ImStarFull } from "react-icons/im";
-import notFoundImg from "../../img/not_found.png";
+
+import Sidebar from "../../componets/Side-bar";
 import Header from "../../componets/Header";
-import { Contente } from "../Home/styles";
-import { SidebarClosed } from "../../componets/SideBar/styles";
-import Sidebar from "../../componets/SideBar";
+
+import { Container, ImageDetails, DetailsDiv, Trailer, Video } from "./styles";
+import { SidebarClosed } from "../../componets/Side-bar/styles";
+import { Content } from "../Home/styles";
+
+import notFoundImg from "../../assets/images/not_found.png";
+import IconYoutube from "../../assets/images/Vector.png";
+
+import { ImHeart, ImStarFull } from "react-icons/im";
 import { FaBars } from "react-icons/fa";
 
 export default function Details() {
@@ -18,6 +23,8 @@ export default function Details() {
 
   const { id } = useParams();
   const [anime, setAnime] = useState(null);
+
+  const [openTrailer, setOpenTrailer] = useState(false);
 
   useEffect(() => {
     fetch(`https://kitsu.io/api/edge/anime/${id}`)
@@ -35,19 +42,18 @@ export default function Details() {
 
   return (
     <>
-      <Contente>
+      <Content>
         <SidebarClosed>
           <FaBars onClick={handleToggleSidebar} />
           {sidebar && <Sidebar active={setSidebar} />}
         </SidebarClosed>
 
         <Header />
-      </Contente>
+      </Content>
 
       <Container>
-        
-        <img src={coverImageSrc} />
-        
+        <img src={coverImageSrc} alt="Banner do anime selecionado" />
+
         <ImageDetails>
           <img src={posterImageSrc} alt="Anime poster" />
           <div>
@@ -56,7 +62,10 @@ export default function Details() {
           </div>
         </ImageDetails>
         <DetailsDiv>
-          <button>VER TRAILER</button>
+          <button onClick={() => setOpenTrailer(!openTrailer)}>
+            <img src={IconYoutube} alt="Logo do YouTube" />
+            VER TRAILER
+          </button>
           <br />
           <span>
             Aprovado por {anime.attributes.averageRating}% da comunidade
@@ -72,6 +81,23 @@ export default function Details() {
           </p>
         </DetailsDiv>
       </Container>
+      {openTrailer && (
+        <Trailer
+          back={`${document.body.scrollHeight}px`}
+          onClick={() => setOpenTrailer(false)}
+        >
+          <Video>
+            <iframe
+              src={`https://www.youtube.com/embed/${anime.attributes.youtubeVideoId}`}
+              title="TRAILER"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+                picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </Video>
+        </Trailer>
+      )}
     </>
   );
 }

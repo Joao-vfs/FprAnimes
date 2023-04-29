@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export const Contente = styled.div`
+export const Content = styled.div`
 
 display: flex;
 
 `
 
 
-export const Box = styled.div`
-  padding: 1rem;
+export const HomeContainer = styled.div`
+  padding: 2rem;
   text-align: left;
   border-left:solid 3.5rem #f46d1b;
   
@@ -24,7 +24,7 @@ export const Box = styled.div`
 `;
 
 
-export const Pop_Container = styled.div`
+export const PopContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -44,10 +44,10 @@ export const Pop_Container = styled.div`
   }
 `;
 
-export const Carousel_div = styled.div`
+export const CarouselContainer = styled.div`
   margin: 5rem 0;
   z-index: -1;
-
+  
   img{
     min-width: 100%;
     min-height: auto; 
@@ -55,7 +55,8 @@ export const Carousel_div = styled.div`
 
 `;
 
-export const Classfilds_Container = styled.div`
+
+export const ClassfildsContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;

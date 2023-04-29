@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import banner from '../../img/banner.png';
 
+import banner from '../../assets/images/banner.png';
 
-export const Cabecalho = styled.nav`
+export const ContainerHeaderHome = styled.nav`
 
   display: flex;
   justify-content: space-between;

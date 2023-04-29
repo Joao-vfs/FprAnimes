@@ -33,7 +33,7 @@ export const SidebarContainer = styled.div`
   width: 300px;
   animation: ${({ sidebar }) => sidebar ? 'showSidebar .4s' : 'hideSidebar .4s'};
   overflow: auto;
-  color: #484747;
+  color: white;
   z-index: 1;
 
   svg {
@@ -85,6 +85,10 @@ export const SidebarContent = styled.div`
 
  a:hover {
     transform: scale(0.9);
+  }
+
+  img{
+    padding: 0.5rem;
   }
 
 `;

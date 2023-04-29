@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 
-export const Rodape = styled.footer`
+export const Baseboard = styled.footer`
 
 display: flex;
 flex-direction: column;
 align-items: center;
 gap: 10px;
 background-color: #262626;
-min-height: 310px;
 padding: 2rem ;
 border-left: solid 3.5rem #F46D1B;
 text-align: center;
@@ -39,7 +38,7 @@ div{
 
 
 `
-export const Gato = styled.img`
+export const Mascot = styled.img`
 
 margin-top: -7%;
 
