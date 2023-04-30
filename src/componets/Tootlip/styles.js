@@ -23,38 +23,37 @@ export const TooltipContent = styled.div`
   display: none;
   text-align: center;
 
-  h3{
-    font-size: 20px ;
+  h3 {
+    font-size: 20px;
     color: var(--white);
   }
 
-  .rating{
+  .rating {
     color: var(--blue);
     font-size: 20px;
     font-weight: bold;
   }
 
-  .pop{
+  .pop {
     font-size: 14px;
     color: var(--white);
   }
 
-  .rank{
+  .rank {
     font-size: 14px;
     color: var(--white);
   }
 
-  span{
+  span {
     font-size: 12px;
     color: var(--white);
   }
 
-  .star{
+  .star {
     color: var(--yellow);
-}
+  }
 
-.heart{
-    color: var(--red)
-}
-
+  .heart {
+    color: var(--red);
+  }
 `;

@@ -9,12 +9,14 @@ export default function Search() {
   const [results, setResults] = useState([]);
 
   const handleSearch = () => {
-    fetch(`https://kitsu.io/api/edge/anime?filter[text]=${encodeURIComponent(text)}`)
+    fetch(
+      `https://kitsu.io/api/edge/anime?filter[text]=${encodeURIComponent(text)}`
+    )
       .then((response) => response.json())
       .then((data) => {
         setResults(data.data);
       });
-  }
+  };
 
   const handleChange = (event) => {
     setText(event.target.value);

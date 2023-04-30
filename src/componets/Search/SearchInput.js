@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-import { ContainerInput, InputContent } from './styles';
+import { ContainerInput, InputContent } from "./styles";
 
-import Lupa from '../../assets/images/magnifying-glass.png'
+import Lupa from "../../assets/images/magnifying-glass.png";
 
 export default function SearchInput() {
-
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
   const navigate = useNavigate();
 
@@ -16,7 +15,7 @@ export default function SearchInput() {
   };
 
   const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       event.preventDefault();
       navigate(`/search?q=${text}`);
     }
@@ -28,27 +27,22 @@ export default function SearchInput() {
   };
 
   return (
-
     <ContainerInput>
-
       <InputContent>
+        <input
+          type="text"
+          placeholder="Buscar"
+          value={text}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+        ></input>
 
-      <input
-        type="text"
-        placeholder="Buscar"
-        value={text}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-      ></input>
-
-      <Link to={`/sarch?q=${text}`}>
-
-        <button onClick={handleButtonClick}><img src={Lupa} alt='lupa' className='lupa'/></button> 
-
-      </Link>
-
+        <Link to={`/sarch?q=${text}`}>
+          <button onClick={handleButtonClick}>
+            <img src={Lupa} alt="lupa" className="lupa" />
+          </button>
+        </Link>
       </InputContent>
-      
     </ContainerInput>
   );
 }

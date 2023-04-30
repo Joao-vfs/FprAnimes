@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const ContainerHeader = styled.nav`
   width: 100%;
   display: flex;
@@ -8,5 +7,4 @@ export const ContainerHeader = styled.nav`
   justify-content: space-between;
   background-color: var(--black);
   opacity: 0.9;
-
-`
+`;
