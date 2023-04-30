@@ -24,7 +24,7 @@ export const ContainerHeaderHome = styled.nav`
     list-style: none;
   }
 
-@media (min-width: 900px;) and (max-width: 1600px) {
+@media (min-width: 900px) and (max-width: 1600px) {
 
   height: 72vh;
   
