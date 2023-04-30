@@ -14,7 +14,7 @@ export const InputContent = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
-  border: solid #ffffff 1px;
+  border: solid var(--white) 1px;
   border-radius: 1rem;
   padding: 0.5rem;
   height: 1.5rem;
@@ -22,7 +22,7 @@ export const InputContent = styled.div`
 input{ 
    border: none;
    background-color: transparent;
-   color: white;
+   color: var(--white);
  }
  
  button {

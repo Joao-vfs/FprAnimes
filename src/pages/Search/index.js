@@ -7,6 +7,7 @@ import Sidebar from "../../componets/Side-bar";
 import {
   Animes,
   AnimesList,
+  ContainerGeneral,
   ButtonGeneral,
   ContenteGeneral,
 } from "../../Style/generalStyling";
@@ -31,11 +32,13 @@ export default function SearchPage() {
 
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [url, setUrl] = useState(
-    `https://kitsu.io/api/edge/anime?filter[text]=${encodeURIComponent(query)}/`
-  );
+
   const [prev, setPrev] = useState("");
   const [next, setNext] = useState("");
+
+  const [url, setUrl] = useState(`https://kitsu.io/api/edge/anime?filter[text]=${encodeURIComponent(
+    query
+  )}`);
 
   useEffect(() => {
     setLoading(true);
@@ -45,10 +48,15 @@ export default function SearchPage() {
         setResults(data.data);
         setLoading(false);
         setPrev(data.links?.prev);
-        setNext(data.links.next);
+        setNext(data.links?.next);
       })
       .catch(() => setLoading(false));
   }, [url]);
+
+  useEffect(() => {
+    setUrl(`https://kitsu.io/api/edge/anime?filter[text]=${encodeURIComponent(query)}`);
+    setLoading(true);
+  }, [query]);
 
   return (
     <>
@@ -60,7 +68,7 @@ export default function SearchPage() {
 
         <Header />
       </Content>
-
+      
       <SearchContent>
         {loading ? (
           <p>Carregando resultados...</p>
@@ -70,7 +78,7 @@ export default function SearchPage() {
               <Animes key={anime.id}>
                 <Link to={`/details/${anime.id}`}>
                   <img
-                    src={anime.attributes.posterImage.small}
+                    src={anime.attributes.posterImage.medium}
                     alt={anime.attributes.canonicalTitle}
                   />
                 </Link>
@@ -81,27 +89,31 @@ export default function SearchPage() {
         ) : (
           <p>Nenhum resultado encontrado para a pesquisa "{query}".</p>
         )}
-
-        <ContenteGeneral>
+      </SearchContent>
+      
+      <ContainerGeneral>
+      <ContenteGeneral>
           {prev && (
             <ButtonGeneral
               onClick={() => {
                 setUrl(prev);
               }}
             >
-              <img src={ArrowLeft} alt="Arrow left" />
+              <img src={ArrowLeft} alt="Arrow Left" />
             </ButtonGeneral>
           )}
-
+          {next && (          
           <ButtonGeneral
             onClick={() => {
               setUrl(next);
             }}
           >
-            <img src={ArrowRight} alt="Arrow rigth" />
-          </ButtonGeneral>
+            <img src={ArrowRight} alt="Arrow Right" />
+          </ButtonGeneral>)}
+
         </ContenteGeneral>
-      </SearchContent>
+      </ContainerGeneral>
     </>
   );
 }
+        

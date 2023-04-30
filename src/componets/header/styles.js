@@ -6,16 +6,7 @@ export const ContainerHeader = styled.nav`
   display: flex;
   padding: 0.5rem;
   justify-content: space-between;
-  background-color: #000000;
+  background-color: var(--black);
   opacity: 0.9;
-  
-
-
-  button{
-    position: relative;
-    right: 10%;
-    background-color: transparent;
-    border: none;
-  }
 
 `

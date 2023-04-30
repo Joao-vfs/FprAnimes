@@ -17,12 +17,17 @@ export const ContainerHeaderHome = styled.nav`
 
   a {
     text-decoration: none;
-    color: white;
+    color: var(--white);
   }
 
   ul {
     list-style: none;
   }
 
+@media (min-width: 900px;) and (max-width: 1600px) {
+
+  height: 72vh;
+  
+}
 
 `;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -7,7 +7,13 @@ import HeaderHome from "../../componets/headerHome";
 import Sidebar from "../../componets/Side-bar";
 import Tooltip from "../../componets/Tootlip";
 
-import { HomeContainer, Content, PopContainer, CarouselContainer, ClassfildsContainer} from "./styles";
+import {
+  HomeContainer,
+  Content,
+  PopContainer,
+  CarouselContainer,
+  ClassfildsContainer,
+} from "./styles";
 import { SidebarClosed } from "../../componets/Side-bar/styles";
 
 import { BiStar, BiLike } from "react-icons/bi";
@@ -44,7 +50,6 @@ export default function Home({ active }) {
       .then((response) => response.json())
       .then((data) => setClassified(data.data));
   }, []);
-
 
   return (
     <>
@@ -93,10 +98,12 @@ export default function Home({ active }) {
             showArrows={false}
             autoPlay={true}
             infiniteLoop={true}
-            transitionTime={3}
+            transitionTime={2}
           >
             {carouselBanners.map((img) => (
-              <img src={img} key={img} alt="Banner do Carrossel da pagina Home" />
+              <div key={img}>
+                <img src={img} alt="Banners do Carrossel da pagina Home" />
+              </div>
             ))}
           </Carousel>
         </CarouselContainer>

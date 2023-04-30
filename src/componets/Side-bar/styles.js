@@ -4,11 +4,11 @@ import styled from 'styled-components';
 export const SidebarClosed = styled.div`
   
   padding: 1rem;
-  background-color: #F46D1B;
+  background-color: var(--orange);
   
 
   svg{
-    color: white;
+    color: var(--white);
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -25,7 +25,7 @@ export const SidebarClosed = styled.div`
 `
 
 export const SidebarContainer = styled.div`
-  background-color: #F46D1B;
+  background-color: var(--orange);
   position: fixed;
   height: 100%;
   top: 0px;
@@ -33,15 +33,16 @@ export const SidebarContainer = styled.div`
   width: 300px;
   animation: ${({ sidebar }) => sidebar ? 'showSidebar .4s' : 'hideSidebar .4s'};
   overflow: auto;
-  color: white;
+  color: var(--white);
   z-index: 1;
 
   svg {
-    color: white;
+    color: var(--white);
     width: 30px;
     height: 30px;
-    margin-left: 1rem;
-    margin-top: 1rem;
+    position: fixed;
+    top: 2%;
+    left: 18%;
     cursor: pointer;
     
   }
@@ -78,9 +79,13 @@ export const SidebarContent = styled.div`
   margin: 20% 0 10% 10%;
   cursor: pointer;
 
+  h1{
+    cursor: default;
+  }
+
  a {
     transition: all 0.3s;
-    color: white;
+    color: var(--white);
   }
 
  a:hover {

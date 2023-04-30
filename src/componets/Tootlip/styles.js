@@ -12,8 +12,7 @@ export const ToolTipContainer = styled.div`
 export const TooltipContent = styled.div`
   display: block;
   position: absolute;
-  background-color: #262626;
-  border: 1px solid #ccc;
+  background-color: var(--gray);
   border-radius: 0.5rem;
   border: none;
   z-index: 1;
@@ -26,36 +25,36 @@ export const TooltipContent = styled.div`
 
   h3{
     font-size: 20px ;
-    color: white;
+    color: var(--white);
   }
 
   .rating{
-    color: #16A085;
+    color: var(--blue);
     font-size: 20px;
     font-weight: bold;
   }
 
   .pop{
     font-size: 14px;
-    color: white;
+    color: var(--white);
   }
 
   .rank{
     font-size: 14px;
-    color: white;
+    color: var(--white);
   }
 
   span{
     font-size: 12px;
-    color: white;
+    color: var(--white);
   }
 
   .star{
-    color: #FFE145;
+    color: var(--yellow);
 }
 
 .heart{
-    color: #FF4545
+    color: var(--red)
 }
 
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerGeneral = styled.div`
 
-    border-left: solid 3.5rem #F46D1B;
+    border-left: solid 3.5rem var(--orange);
     padding: 2rem;
 `
 
@@ -24,7 +24,7 @@ export const Animes = styled.li`
 
         
         img{
-        width: 180px;
+        width: 225px;
         border-radius: 1rem;
         margin-bottom: 2rem;
     }
@@ -58,14 +58,7 @@ export const ButtonGeneral = styled.button`
     padding: 0.5rem;
     border-radius: 0.7rem;
     border: none;
-    background-color: #F46D1B;
+    background-color: var(--orange);
     cursor: pointer;
     
-
-    svg{
-        color: white;
-        font-size: 30px;
-        text-align: center;
-    }
-
 `

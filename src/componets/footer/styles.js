@@ -7,20 +7,20 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 10px;
-background-color: #262626;
+background-color: var(--gray);
 padding: 2rem ;
-border-left: solid 3.5rem #F46D1B;
+border-left: solid 3.5rem var(--gray);
 text-align: center;
 font-size: 18px;
-color: white;
+color: var(--white);
 
 strong{
-  color: #34AC40;
+  color: var(--green);
 }
 
 button{
   background-color: transparent;
-  border: solid 5px #F46D1B ;
+  border: solid 5px var(--orange) ;
   color: #F46D1B;
   font-weight: bold;
   font-size: 20px;
@@ -36,10 +36,10 @@ div{
   width: 100%;
 }
 
-
 `
 export const Mascot = styled.img`
 
-margin-top: -7%;
+margin-top: -6.7%;
+
 
 `

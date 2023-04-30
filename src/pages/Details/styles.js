@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin-top: -6rem;
-  border-left: solid 3.5rem #f46d1b;
+  border-left: solid 3.5rem var(--orange);
   z-index: -1;
 
   img {
@@ -32,7 +32,7 @@ export const DetailsDiv = styled.div`
 
   span {
     font-weight: bold;
-    color: #16a085;
+    color: var(--blue);
   }
 
   button {
@@ -41,7 +41,7 @@ export const DetailsDiv = styled.div`
     justify-content: space-evenly;
     width: 180px;
     height: 50px;
-    background-color: #f46d1b;
+    background-color: var(--orange);
     color: white;
     border: none;
     border-radius: 10px;
@@ -55,11 +55,11 @@ export const DetailsDiv = styled.div`
     }
   }
   .star {
-    color: #ffe145;
+    color: var(--yellow);
   }
 
   .heart {
-    color: #ff4545;
+    color: var(--red);
   }
 `;
 
@@ -79,5 +79,10 @@ export const Video = styled.div`
   iframe {
     width: 905px;
     height: 509px;
+  }
+
+  @media (min-width: 1600px)  {
+    
+    left: 450px;
   }
 `;
