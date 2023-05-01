@@ -24,9 +24,10 @@ ReactJS;
 Styled-Components.
 
 #clonar repositório
-https://github.com/bmloredo/Animes
+https://github.com/Joao-vfs/FprAnimes.git
 
 
 #executar o projeto
+
 1 - npm install
 2 - npm start
