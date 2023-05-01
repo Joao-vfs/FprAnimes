@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import SearchInput from "../Search/SearchInput";
 
-import { ContainerHeader } from "./styles";
+import { ContainerHeaderHome } from "./styles";
 
-import Logo from "../../assets/images/Untitled-1 4.png";
+import Logo from "../../assets/images/logo (2).png";
 
-export default function Header() {
+export default function HeaderHome() {
   const [text, setText] = useState("");
 
   const [searchText, setSearchText] = useState("");
@@ -24,7 +24,7 @@ export default function Header() {
 
       const results = response.data;
 
-      navigate(`/search?q=${query}&page=${page}`, { state: { results } });
+      navigate(`/saerch?q=${query}&page=${page}`, { state: { results } });
       setText("");
     }
   };
@@ -40,10 +40,12 @@ export default function Header() {
   };
 
   return (
-    <ContainerHeader>
-      <Link to="/">
-        <img src={Logo} alt="Logo da Fpr-Animes" />
-      </Link>
+    <ContainerHeaderHome>
+      <img
+        src={Logo}
+        alt="Logo da Fpr-Animes da Pagina Principal"
+        className="Logo"
+      />
 
       <SearchInput
         text={searchText}
@@ -64,6 +66,6 @@ export default function Header() {
           ))}
         </div>
       )}
-    </ContainerHeader>
+    </ContainerHeaderHome>
   );
 }

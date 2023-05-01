@@ -1,40 +1,48 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Busca } from './styles';
-import { FcSearch } from "react-icons/fc";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+import { ContainerInput, InputContent } from "./styles";
+
+import Lupa from "../../assets/images/magnifying-glass.png";
 
 export default function SearchInput() {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
+
   const navigate = useNavigate();
 
   const handleChange = (event) => {
     setText(event.target.value);
   };
 
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
       event.preventDefault();
-      navigate(`/paginadebusca?q=${text}`);
+      navigate(`/search?q=${text}`);
     }
   };
 
   const handleButtonClick = (event) => {
     event.preventDefault();
-    navigate(`/paginadebusca?q=${text}`);
+    navigate(`/search?q=${text}`);
   };
 
   return (
-    <div>
-      <Busca
-        type="text"
-        placeholder="Pesquisar anime"
-        value={text}
-        onChange={handleChange}
-        onKeyPress={handleKeyPress}
-      />
-      <Link to={`/paginadebusca?q=${text}`}>
-        <FcSearch className='Lupa' onClick={handleButtonClick}/>
-      </Link>
-    </div>
+    <ContainerInput>
+      <InputContent>
+        <input
+          type="text"
+          placeholder="Buscar"
+          value={text}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+        ></input>
+
+        <Link to={`/sarch?q=${text}`}>
+          <button onClick={handleButtonClick}>
+            <img src={Lupa} alt="lupa" className="lupa" />
+          </button>
+        </Link>
+      </InputContent>
+    </ContainerInput>
   );
 }

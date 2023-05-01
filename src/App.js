@@ -1,48 +1,30 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-import bars from './img/bars.png'
-
-
-import Header from './componets/header';
-
-import Home from './pages/Home';
-import Todos from './pages/Todos';
-import Footer from './componets/footer';
-import Details from './pages/Details';
-import Categories from './pages/Categories';
-import SearchPage from './pages/Busca';
-
+import Home from "./pages/Home";
+import All from "./pages/All";
+import Footer from "./componets/Footer";
+import Details from "./pages/Details";
+import Categories from "./pages/Categories";
+import SearchPage from "./pages/Search";
 
 export default function App() {
   return (
     <BrowserRouter>
-
-
-      <></>
-
       <>
-
         <Routes>
+          <Route path="/" element={<Home />} />
 
-          <Route path='/' element={<Home />} />
+          <Route path="/all" element={<All />} />
 
-          <Route path='/todososanimes' element={<Todos />} />
+          <Route path="/details/:id" element={<Details />} />
 
-          <Route path='/details/:id' element={<Details/>}/>
+          <Route path="/categories/:id" element={<Categories />} />
 
-          <Route path='/categories/:id' element={<Categories/>}/>
-
-          <Route path='/paginadebusca' element={<SearchPage/>}/>
-
-
+          <Route path="/search" element={<SearchPage />} />
         </Routes>
-
       </>
-
       <Footer />
-
     </BrowserRouter>
   );
 }

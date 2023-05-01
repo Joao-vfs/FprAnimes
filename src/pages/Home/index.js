@@ -1,119 +1,143 @@
-/* eslint-disable react/jsx-pascal-case */
-/* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+import HeaderHome from "../../componets/headerHome";
+import Sidebar from "../../componets/Side-bar";
+import Tooltip from "../../componets/Tootlip";
 
-
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-
-import { Box, Pop_Container, Classfilds_Container, Image_Home, Image_Carousel, Carousel_div, Banner } from './styles'
+import {
+  HomeContainer,
+  Content,
+  PopContainer,
+  CarouselContainer,
+  ClassfildsContainer,
+} from "./styles";
+import { SidebarClosed } from "../../componets/Side-bar/styles";
 
 import { BiStar, BiLike } from "react-icons/bi";
+import { FaBars } from "react-icons/fa";
 
-import { Link } from 'react-router-dom'
+import banner1 from "../../assets/images/banner interno 1.png";
+import banner2 from "../../assets/images/banner interno 2.png";
+import banner3 from "../../assets/images/banner interno 3.png";
 
-import banner from '../../img/banner.png'
+export default function Home({ active }) {
+  const [sidebar, setSidebar] = useState(false);
 
-import banner1 from '../../img/banner interno 1.png'
-import banner2 from '../../img/banner interno 2.png'
-import banner3 from '../../img/banner interno 3.png'
-import Header_Home from '../../componets/header_home';
+  const handleToggleSidebar = () => {
+    setSidebar(!sidebar);
+  };
 
+  const [pop, setPop] = useState([]);
+  const [classified, setClassified] = useState([]);
 
+  const carouselBanners = [banner1, banner2, banner3];
 
-export default function Home() {
-
-    const [pop, setPop] = useState([])
-
-    const [classified, setClassified] = useState([])
-
-    const carouselBanners = [
-        banner1,
-        banner2,
-        banner3
-    ]
-
-
-    useEffect(() => {
-        fetch("https://kitsu.io/api/edge/anime?page%5Blimit%5D=5&sort=popularityRank")
-            .then(response => response.json())
-            .then(data => setPop(data.data))
-    }, [])
-
-    useEffect(() => {
-        fetch("https://kitsu.io/api/edge/anime?page%5Blimit%5D=5&sort=-average_rating")
-            .then(response => response.json())
-            .then(data => setClassified(data.data))
-    }, [])
-
-    return (
-        <>
-        
-        <Header_Home/>
-
-        <Box>
-            
-            
-
-            
-            
-            <Pop_Container>
-              <h2><strong><BiStar /> Animes</strong> Mais Populares</h2>  
-                {pop.map(pops => {
-                    return (
-                        <div key={pop.id}>
-                            <Link to={`/Details/${pops.id}`}>
-                                <Image_Home src={pops.attributes.posterImage.small} />
-                            </Link>
-
-                        </div>
-
-                    )
-                })}
-            </Pop_Container>
-
-            <Carousel_div>
-
-                <Carousel_div>
-
-                    <Carousel
-                    showThumbs={false}
-                    showStatus={false}
-                    showArrows={false}
-                    autoPlay={true}
-                    infiniteLoop={true}
-                    transitionTime={3}
-                    >
-                        {carouselBanners.map(img => (
-                            <img src={img} key={img} />
-                        ))
-
-                        }
-                    </Carousel>
-
-                </Carousel_div>
-
-            </Carousel_div>
-
-            
-            <Classfilds_Container>
-               <h2><strong><BiLike /> Animes</strong> Mais bem Classificados</h2> 
-                {classified.map(classifieds => {
-                    return (
-                        <div key={classified.id}>
-                            <Link to={`Details/${classifieds.id}`}>
-                                <Image_Home src={classifieds.attributes.posterImage.small} />
-                            </Link>
-
-                        </div>
-
-                    )
-                })}
-            </Classfilds_Container>
-
-        </Box>
-
-        </>
+  useEffect(() => {
+    fetch(
+      "https://kitsu.io/api/edge/anime?page%5Blimit%5D=5&sort=popularityRank"
     )
+      .then((response) => response.json())
+      .then((data) => setPop(data.data));
+  }, []);
+
+  useEffect(() => {
+    fetch(
+      "https://kitsu.io/api/edge/anime?page%5Blimit%5D=5&sort=-average_rating"
+    )
+      .then((response) => response.json())
+      .then((data) => setClassified(data.data));
+  }, []);
+
+  return (
+    <>
+      <Content>
+        <SidebarClosed>
+          <FaBars onClick={handleToggleSidebar} />
+          {sidebar && <Sidebar active={setSidebar} />}
+        </SidebarClosed>
+
+        <HeaderHome />
+      </Content>
+
+      <HomeContainer>
+        <PopContainer>
+          <h2>
+            <strong>
+              <BiStar /> Animes
+            </strong>{" "}
+            Mais Populares
+          </h2>
+          {pop.map((pops) => {
+            return (
+              <Tooltip
+                key={pops.id}
+                title={pops.attributes.canonicalTitle}
+                averageRating={pops.attributes.averageRating}
+                popularityRank={pops.attributes.popularityRank}
+                ratingRank={pops.attributes.ratingRank}
+                description={pops.attributes.description ?? "Sem descrição"}
+              >
+                <Link to={`details/${pops.id}`}>
+                  <img
+                    src={pops.attributes.posterImage.small}
+                    alt={pops.attributes.canonicalTitle}
+                  />
+                </Link>
+              </Tooltip>
+            );
+          })}
+        </PopContainer>
+
+        <CarouselContainer>
+          <Carousel
+            showThumbs={false}
+            showStatus={false}
+            showArrows={false}
+            autoPlay={true}
+            infiniteLoop={true}
+            transitionTime={2}
+          >
+            {carouselBanners.map((img) => (
+              <div key={img}>
+                <img src={img} alt="Banners do Carrossel da pagina Home" />
+              </div>
+            ))}
+          </Carousel>
+        </CarouselContainer>
+
+        <ClassfildsContainer>
+          <h2>
+            <strong>
+              <BiLike /> Animes
+            </strong>{" "}
+            Mais bem Classificados
+          </h2>
+          {classified.map((classifieds) => {
+            return (
+              <Tooltip
+                key={classifieds.id}
+                title={classifieds.attributes.canonicalTitle}
+                averageRating={classifieds.attributes.averageRating}
+                popularityRank={classifieds.attributes.popularityRank}
+                ratingRank={classifieds.attributes.ratingRank}
+                description={
+                  classifieds.attributes.description ?? "Sem descrição"
+                }
+              >
+                <Link to={`details/${classifieds.id}`}>
+                  <img
+                    src={classifieds.attributes.posterImage.small}
+                    alt={classifieds.attributes.canonicalTitle}
+                  />
+                </Link>
+              </Tooltip>
+            );
+          })}
+        </ClassfildsContainer>
+      </HomeContainer>
+    </>
+  );
 }
