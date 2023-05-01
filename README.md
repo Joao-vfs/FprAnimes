@@ -9,19 +9,24 @@ A aplição foi constituida na documentação da API de Animes: https://kitsu.do
 
 O projeto teve como desafio criar 5 páginas principais, que são:
 
-Página inicial - Home
-Página com todos animes da API 
-Página de anime de acordo com busca do usuário
-Página de animes por categorias
-Página de informações de anime específico
+Página inicial - Home;
+
+Página com todos animes da API;
+
+Página de anime de acordo com busca do usuário;
+
+Página de animes por categorias;
+
+Página de informações de anime específico.
 
 ## Recursos utilizados:
 ReactJS;
 Styled-Components.
-# repositório
-https://github.com/Joao-vfs/SiteAnimes.git
+
+#clonar repositório
+https://github.com/bmloredo/Animes
 
 
-## executar o projeto
-## 1 - npm install
-## 2 - npm start
+#executar o projeto
+1 - npm install
+2 - npm start
