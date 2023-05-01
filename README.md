@@ -1,26 +1,26 @@
-## FPR ANIMES
+## PROJETO ANIMES
 ## SOBRE O PROJETO
-O projeto Animes é um projeto Front-End desenvolvido em React.js.
 
-O projeto foi criado afim de testar as minhas habilidades em desenvolvimento Front-end.
+Todo o projeto foi criado com o intuito de em instigar minhas habilidades no Front-End.
 
-Todo o projeto foi connstruído com base na documentação da API de Animes: https://kitsu.docs.apiary.io/#introduction
+O projeto tem o desenvolvimento feito em React.js. 
 
-A aplicação consistiu em criar um site de animes, com 5 paginas principais:
+A aplição foi constituida na documentação da API de Animes: https://kitsu.docs.apiary.io/#introduction
+
+O projeto teve como desafio criar 5 páginas principais, que são:
 
 Página inicial - Home
-Página com todos animes da API
+Página com todos animes da API 
 Página de anime de acordo com busca do usuário
 Página de animes por categorias
 Página de informações de anime específico
 
-## Tecnologias utilizadas
-ReactJS
-Axios
-Styled-Components
-Como executar o projeto
-## clonar repositório
-https://github.com/bmloredo/Animes
+## Recursos utilizados:
+ReactJS;
+Styled-Components.
+## Projeto
+# repositório
+https://github.com/Joao-vfs/SiteAnimes.git
 
 
 ## executar o projeto
