@@ -201,14 +201,14 @@ export const DetailsDiv = styled.div`
 @media (min-width: 830px) and (max-width: 1024px) {
 
 
-
-
-
 }
 `;
 
 export const Trailer = styled.div`
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 0;
   min-width: 100%;
   background: rgba(0, 0, 0, 0.85);
@@ -216,9 +216,6 @@ export const Trailer = styled.div`
 `;
 
 export const Video = styled.div`
-  position: absolute;
-  top: 385px;
-  left: 231px;
 
   iframe {
     width: 905px;
@@ -268,8 +265,8 @@ top: 185px;
 left: 100px;
 
 iframe {
-  width: 600px;
-  height: 400px;
+  width: 300px;
+  height: 150px;
 }
 
 }
