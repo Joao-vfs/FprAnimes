@@ -18,11 +18,10 @@ Página de informações de anime específico
 ## Recursos utilizados:
 ReactJS;
 Styled-Components.
-## Projeto
 # repositório
 https://github.com/Joao-vfs/SiteAnimes.git
 
 
 ## executar o projeto
-1 - npm install
-2 - npm start
+## 1 - npm install
+## 2 - npm start
