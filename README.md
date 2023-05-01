@@ -1,4 +1,4 @@
-## PROJETO ANIMES
+## FPR ANIMES
 ## SOBRE O PROJETO
 
 Todo o projeto foi criado com o intuito de em instigar minhas habilidades no Front-End.
