@@ -1,5 +1,5 @@
-PROJETO ANIMES
-SOBRE O PROJETO
+## FPR ANIMES
+## SOBRE O PROJETO
 O projeto Animes é um projeto Front-End desenvolvido em React.js.
 
 O projeto foi criado afim de testar as minhas habilidades em desenvolvimento Front-end.
@@ -14,15 +14,15 @@ Página de anime de acordo com busca do usuário
 Página de animes por categorias
 Página de informações de anime específico
 
-Tecnologias utilizadas
+## Tecnologias utilizadas
 ReactJS
 Axios
 Styled-Components
 Como executar o projeto
-#clonar repositório
+## clonar repositório
 https://github.com/bmloredo/Animes
 
 
-#executar o projeto
+## executar o projeto
 1 - npm install
 2 - npm start
