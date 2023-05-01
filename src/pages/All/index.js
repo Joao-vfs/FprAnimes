@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Sidebar from "../../componets/Side-bar";
-import Header from "../../componets/Header";
+import Header from "../../componets/header";
 
 import {
   Animes,

@@ -20,6 +20,7 @@ export const InputContent = styled.div`
     border: none;
     background-color: transparent;
     color: var(--white);
+    outline: none;
   }
 
   button {

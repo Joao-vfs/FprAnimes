@@ -4,6 +4,7 @@ export const Container = styled.div`
   margin-top: -6rem;
   border-left: solid 3.5rem var(--orange);
   z-index: -1;
+  min-height: 75vh;
 
   img {
     width: 100%;

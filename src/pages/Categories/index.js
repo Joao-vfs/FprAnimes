@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import Header from "../../componets/Header";
+import Header from "../../componets/header";
 import Sidebar from "../../componets/Side-bar";
 
 import {

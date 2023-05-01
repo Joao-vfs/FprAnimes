@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 
-import Header from "../../componets/Header";
+import Header from "../../componets/header";
 import Sidebar from "../../componets/Side-bar";
 
 import {
