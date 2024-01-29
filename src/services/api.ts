@@ -1,8 +1,8 @@
 import axios from "axios";
-import apiAnime from "./api.config";
+import apiBase from "./config";
 
 const api = axios.create({
-  baseURL: "https://kitsu.io/api/edge/",
+  baseURL: apiBase.apiKitsu,
 });
 
 export { api };
