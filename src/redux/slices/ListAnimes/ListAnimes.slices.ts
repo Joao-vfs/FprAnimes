@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { IListAnimesSliceProps } from "@/interfaces/listAnimes.interface";
+import { IListAnimesSliceProps } from "@/interfaces/IListAnimes.interface";
 
 const initialState: IListAnimesSliceProps = {
   id: 0,

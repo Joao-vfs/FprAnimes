@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import { UseAppSelector } from "@/redux/store";
 
-import { IListAnimesDataProps } from "@/interfaces/listAnimes.interface";
+import { IListAnimesDataProps } from "@/interfaces/IListAnimes.interface";
 
 import { getAnimesSearched } from "@/services/query";
 

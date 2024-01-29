@@ -3,7 +3,7 @@
 import React from "react";
 
 import ButtonCustomComponent from "./ButtonCustom.component";
-import { IButtonCustomProps } from "@/interfaces/buttonCustom.interface";
+import { IButtonCustomProps } from "@/interfaces/IButtonCustom.interface";
 
 export  function ButtonCustom({
   width,

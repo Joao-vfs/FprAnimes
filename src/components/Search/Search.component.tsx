@@ -7,29 +7,28 @@ import { css } from "@shadow-panda/styled-system/css";
 
 import IcLand from "@/assets/img/magnifying-glass.svg";
 
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/redux/store";
-import { handleSearchedNames } from "@/redux/slices/search.slices";
-import { handleFirstPage } from "@/redux/slices/pagination.slice";
-import { toggleChangeHeader } from "@/redux/slices/header.slices";
+import { UseAppDispatch } from "@/redux/store";
+import { handleSearchedNames } from "@/redux/slices/Search/Search.slices";
+import { handleFirstPage } from "@/redux/slices/Pagination/Pagination.slices";
+import { toggleChangeHeader } from "@/redux/slices/Header/Header.slices";
 
-import { ISearchProps } from "@/interfaces/search.interface";
+import { ISearchProps } from "@/interfaces/ISearch.interface";
 
 export default function SearchComponent({
   valueFilter,
 }: Readonly<ISearchProps>) {
-  const dispacth = useDispatch<AppDispatch>();
+  const dispatch = UseAppDispatch();
   const router = useRouter();
 
   const handleFilterChange = (filter: string) => {
-    dispacth(handleSearchedNames(filter));
+    dispatch(handleSearchedNames(filter));
   };
 
   const handleSearchSubmission = (key: KeyboardEvent<HTMLInputElement>) => {
     if (key.key === "Enter" && valueFilter !== "") {
       router.push("/searched");
-      dispacth(handleFirstPage());
-      dispacth(toggleChangeHeader("small"));
+      dispatch(handleFirstPage());
+      dispatch(toggleChangeHeader("small"));
     } else if (key.key === "Enter" && valueFilter === "") {
       alert("Insira algo no campo de busca!");
     }
@@ -38,8 +37,8 @@ export default function SearchComponent({
   const handleSearchClick = () => {
     if (valueFilter !== "") {
       router.push("/searched");
-      dispacth(toggleChangeHeader("small"));
-      dispacth(handleFirstPage());
+      dispatch(toggleChangeHeader("small"));
+      dispatch(handleFirstPage());
     } else {
       alert("Insira algo no campo de busca!");
     }

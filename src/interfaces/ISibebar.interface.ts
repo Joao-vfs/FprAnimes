@@ -1,4 +1,4 @@
-import { IListAnimesProps } from "./pages.intefaces";
+import { IListAnimesDataProps } from "./IListAnimes.interface";
 
 export interface ISidebarSliceProps {
   openSibebar: boolean;
@@ -6,6 +6,6 @@ export interface ISidebarSliceProps {
 }
 
 export interface ISidebarProps {
-  listCategorys: IListAnimesProps[];
+  listCategorys: IListAnimesDataProps[];
   openSidebar: boolean;
 }

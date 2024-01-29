@@ -1,8 +1,8 @@
 import axios from "axios";
-import apiBase from "./config";
+import { config } from "./config";
 
 const api = axios.create({
-  baseURL: apiBase.apiKitsu,
+  baseURL: config.API_BASE,
 });
 
 export { api };

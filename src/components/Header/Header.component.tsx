@@ -6,18 +6,17 @@ import { css } from "@shadow-panda/styled-system/css";
 import IcLogo from "@/assets/img/logo.svg";
 import IcLogoSmall from "@/assets/img/Untitled-1 4.svg";
 
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/redux/store";
-import { toggleChangeHeader } from "@/redux/slices/header.slices";
+import { UseAppDispatch } from "@/redux/store";
+import { toggleChangeHeader } from "@/redux/slices/Header/Header.slices";
 
-import { IHeaderProps } from "@/interfaces/header.interface";
+import { IHeaderProps } from "@/interfaces/IHeader.interface";
 
 import { Search } from "..";
 
 export default function HeaderComponent({
   otherHeader,
 }: Readonly<IHeaderProps>) {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = UseAppDispatch();
 
   return otherHeader === "small" ? (
     <div

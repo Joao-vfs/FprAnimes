@@ -1,5 +1,3 @@
-const apiBase = {
-  apiKitsu: process.env.NEXT_APP_BASE_API,
+export const config = {
+  API_BASE: process.env.NEXT_PUBLIC_URL_BASE,
 };
-
-export default apiBase;

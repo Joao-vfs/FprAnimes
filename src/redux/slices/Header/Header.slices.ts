@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IHeaderSliceProps } from "@/interfaces/header.interface";
+
+import { IHeaderSliceProps } from "@/interfaces/IHeader.interface";
+
 
 const initialState: IHeaderSliceProps = {
   changeHeader: "large",

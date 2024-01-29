@@ -7,7 +7,7 @@ import { css } from "@shadow-panda/styled-system/css";
 import { ButtonCustom } from "@/components";
 import { useRouter } from "next/navigation";
 
-export default function Page() {
+export default function PageInitial() {
   const router = useRouter();
   return (
     <div
@@ -16,6 +16,7 @@ export default function Page() {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        gap: "10px",
         bg: "#000",
         w: "full",
         h: "screen",
@@ -34,7 +35,7 @@ export default function Page() {
       <ButtonCustom
         width={"221px"}
         height={"49px"}
-        borderRadius={""}
+        borderRadius={"10px"}
         bgColor={"#fff"}
         padding={"10px"}
         display={"flex"}
@@ -43,7 +44,16 @@ export default function Page() {
         gap={"10px"}
         onFunction={() => router.push("/home")}
       >
-        Começe a navegação!
+        <small
+          className={css({
+            textStyle: "small",
+            color: "#F46D1B",
+            fontSize: "16px",
+            fontWeight: 500,
+          })}
+        >
+          Começe a navegação!
+        </small>{" "}
       </ButtonCustom>
     </div>
   );

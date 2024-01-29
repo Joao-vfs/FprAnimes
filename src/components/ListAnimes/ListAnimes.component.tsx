@@ -5,18 +5,17 @@ import { Fragment } from "react";
 
 import { css } from "@shadow-panda/styled-system/css";
 
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/redux/store";
-import { handleIdAnimesSelection } from "@/redux/slices/listAnimes.slices";
+import { UseAppDispatch } from "@/redux/store";
+import { handleIdAnimesSelection } from "@/redux/slices/ListAnimes/ListAnimes.slices";
 
-import { IListAnimesProps } from "@/interfaces/listAnimes.interface";
+import { IListAnimesProps } from "@/interfaces/IListAnimes.interface";
 
 import { Pagination } from "..";
 
 export default function ListAnimesComponent({
   data,
 }: Readonly<IListAnimesProps>) {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = UseAppDispatch();
 
   return (
     <Fragment>
@@ -25,7 +24,7 @@ export default function ListAnimesComponent({
           h: "full",
           w: "full",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(221px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(208px, 1fr))",
           columnGap: "10px",
           rowGap: "10px",
         })}

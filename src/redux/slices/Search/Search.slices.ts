@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ISearchSliceProps } from "@/interfaces/search.interface";
+import { ISearchSliceProps } from "@/interfaces/ISearch.interface";
 
 const initialState: ISearchSliceProps = {
   filter: "",

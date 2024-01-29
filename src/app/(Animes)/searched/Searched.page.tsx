@@ -1,6 +1,6 @@
 import { css } from "@shadow-panda/styled-system/css";
 
-import { IPageProps } from "@/interfaces/pages.intefaces";
+import { IPageProps } from "@/interfaces/IPages.intefaces";
 
 import { ListAnimes, TitleList } from "@/components";
 

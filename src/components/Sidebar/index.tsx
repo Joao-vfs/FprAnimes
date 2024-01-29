@@ -6,12 +6,12 @@ import { getAnimesAllCategorys } from "@/services/query";
 
 import { UseAppSelector } from "@/redux/store";
 
-import { IListAnimesProps } from "@/interfaces/pages.intefaces";
+import { IListAnimesDataProps } from "@/interfaces/IListAnimes.interface";
 
 import SidebarComponent from "./Sidebar.component";
 
 export function Sidebar() {
-  const [listCategorys, setListCategory] = useState<IListAnimesProps[]>([]);
+  const [listCategory, setListCategory] = useState<IListAnimesDataProps[]>([]);
 
   const openSidebar = UseAppSelector((state) => state.sidebarSlice.openSibebar);
 
@@ -28,6 +28,6 @@ export function Sidebar() {
   }, []);
 
   return (
-    <SidebarComponent openSidebar={openSidebar} listCategorys={listCategorys} />
+    <SidebarComponent openSidebar={openSidebar} listCategorys={listCategory} />
   );
 }

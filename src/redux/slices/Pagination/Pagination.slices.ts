@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IPaginationSliceProps } from "@/interfaces/pagination.interface";
+import { IPaginationSliceProps } from "@/interfaces/IPagination.interface";
 
 const initialState: IPaginationSliceProps = {
   page: 20,

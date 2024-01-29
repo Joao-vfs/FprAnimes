@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ISidebarSliceProps } from "@/interfaces/sibebar.interface";
+import { ISidebarSliceProps } from "@/interfaces/ISibebar.interface";
 
 const initialState: ISidebarSliceProps = {
   openSibebar: false,

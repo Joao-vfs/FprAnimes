@@ -2,14 +2,13 @@ import Image from "next/image";
 
 import { css } from "@shadow-panda/styled-system/css";
 
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/redux/store";
+import { UseAppDispatch } from "@/redux/store";
 import {
   toggleNextPage,
   togglePrevPage,
-} from "@/redux/slices/pagination.slice";
+} from "@/redux/slices/Pagination/Pagination.slices";
 
-import { IPaginationProps } from "@/interfaces/pagination.interface";
+import { IPaginationProps } from "@/interfaces/IPagination.interface";
 
 import IcArrowLeft from "@/assets/img/arrow-left.svg";
 import IcArrowRight from "@/assets/img/arrow-right.svg";
@@ -19,7 +18,7 @@ import { ButtonCustom } from "..";
 export default function PaginationComponent({
   page,
 }: Readonly<IPaginationProps>) {
-  const dispacth = useDispatch<AppDispatch>();
+  const dispatch = UseAppDispatch();
 
   return (
     <div
@@ -44,7 +43,7 @@ export default function PaginationComponent({
           justifyContent={"center"}
           alignItems={"center"}
           gap={"0"}
-          onFunction={() => dispacth(togglePrevPage())}
+          onFunction={() => dispatch(togglePrevPage())}
         >
           <Image src={IcArrowLeft} alt="" />
         </ButtonCustom>
@@ -59,7 +58,7 @@ export default function PaginationComponent({
         justifyContent={"center"}
         alignItems={"center"}
         gap={"0"}
-        onFunction={() => dispacth(toggleNextPage())}
+        onFunction={() => dispatch(toggleNextPage())}
       >
         <Image src={IcArrowRight} alt="" />
       </ButtonCustom>

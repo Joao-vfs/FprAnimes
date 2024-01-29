@@ -1,30 +1,26 @@
 import Image from "next/image";
 
-import { Fragment } from "react";
-
 import { css } from "@shadow-panda/styled-system/css";
 
 import IcYoutubeLogo from "@/assets/img/Vector.svg";
 import IcStar from "@/assets/img/star.svg";
 import IcHeart from "@/assets/img/heart.svg";
 
-import { IListAnimesDataProps } from "@/interfaces/listAnimes.interface";
+import { ISpecificAnimeProps } from "@/interfaces/ISpecificAnime.interface";
 
 import { ButtonCustom } from "@/components";
 
 export default function SpecificAnimePage({
   specificAnime,
-}: {
-  specificAnime: IListAnimesDataProps | null;
-}) {
+}: Readonly<ISpecificAnimeProps>) {
   return (
-    <Fragment>
+    <div>
       <div
         className={css({
           h: "full",
           w: "full",
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "space-evenly",
           gap: "29px",
           px: "25px",
@@ -145,6 +141,6 @@ export default function SpecificAnimePage({
           </small>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 }

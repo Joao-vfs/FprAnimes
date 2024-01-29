@@ -6,7 +6,7 @@ import { getAnimesCategorys } from "@/services/query";
 
 import { UseAppSelector } from "@/redux/store";
 
-import { IListAnimesDataProps } from "@/interfaces/listAnimes.interface";
+import { IListAnimesDataProps } from "@/interfaces/IListAnimes.interface";
 
 import CategoryPage from "./Category.page";
 

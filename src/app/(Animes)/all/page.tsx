@@ -6,7 +6,7 @@ import { getAnimes } from "@/services/query";
 
 import { UseAppSelector } from "@/redux/store";
 
-import { IListAnimesDataProps } from "@/interfaces/listAnimes.interface";
+import { IListAnimesDataProps } from "@/interfaces/IListAnimes.interface";
 
 import AllPage from "./All.page";
 

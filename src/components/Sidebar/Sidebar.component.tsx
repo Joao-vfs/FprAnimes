@@ -7,23 +7,22 @@ import IcBars from "@/assets/img/bars.svg";
 import IcClose from "@/assets/img/x.svg";
 import IcList from "@/assets/img/list.svg";
 
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/redux/store";
+import { UseAppDispatch } from "@/redux/store";
 import {
   selectedCategory,
   toggleOpenSidebar,
-} from "@/redux/slices/sidebar.slices";
-import { toggleChangeHeader } from "@/redux/slices/header.slices";
-import { handleFirstPage } from "@/redux/slices/pagination.slice";
+} from "@/redux/slices/Sibebar/Sidebar.slices";
+import { toggleChangeHeader } from "@/redux/slices/Header/Header.slices";
+import { handleFirstPage } from "@/redux/slices/Pagination/Pagination.slices";
 
-import { ISidebarProps } from "@/interfaces/sibebar.interface";
+import { ISidebarProps } from "@/interfaces/ISibebar.interface";
 
 
 export default function SidebarComponent({
   openSidebar,
   listCategorys,
 }: Readonly<ISidebarProps>) {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = UseAppDispatch();
 
   const handleItemsSibebar = (category: string) => {
     dispatch(selectedCategory(category));
@@ -71,7 +70,7 @@ export default function SidebarComponent({
               })}
             >
               <Link href={"/category"}>
-                <small
+                <button
                   className={css({
                     w: "full",
                     textStyle: "small",
@@ -80,11 +79,13 @@ export default function SidebarComponent({
                     fontSize: "16px",
                     cursor: "pointer",
                     mt: "16px",
+                    border: "none",
+                    outline: "none",
                   })}
                   onClick={() => handleItemsSibebar(category.attributes.title)}
                 >
                   {category.attributes.title}
-                </small>
+                </button>
               </Link>
             </div>
           ))}

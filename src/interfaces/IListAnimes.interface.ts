@@ -5,7 +5,7 @@ export interface IListAnimesSliceProps {
 export interface IAttributesProps {
   id: number;
   canonicalTitle: string;
-  title: { en_jp: string };
+  title: string ;
   averageRating: string;
   posterImage: { small: string };
   coverImage: { small: string };

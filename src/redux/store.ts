@@ -1,23 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { TypedUseSelectorHook, useSelector } from "react-redux";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
-import headerSlice from "@/redux/slices/header.slices";
-import listAnimesSlice  from "@/redux/slices/listAnimes.slices";
-import paginationSlice from "@/redux/slices/pagination.slice";
-import searchSlice from "@/redux/slices/search.slices";
-import sidebarSlice from "@/redux/slices/sidebar.slices";
+import { rootReducers } from "./reducers";
+
 
 export const store = configureStore({
-  reducer: {
-    headerSlice,
-    listAnimesSlice,
-    paginationSlice,
-    searchSlice,
-    sidebarSlice,
-  },
+  reducer: rootReducers,
 });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
 export const UseAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const UseAppDispatch: () => AppDispatch = useDispatch;

@@ -6,13 +6,12 @@ import { css } from "@shadow-panda/styled-system/css";
 import IcMascot from "@/assets/img/yuzu 1.svg";
 import IcLogoWhite from "@/assets/img/icon logo animes branco 1.svg";
 
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/redux/store";
-import { toggleChangeHeader } from "@/redux/slices/header.slices";
-import { handleFirstPage } from "@/redux/slices/pagination.slice";
+import { UseAppDispatch } from "@/redux/store";
+import { toggleChangeHeader } from "@/redux/slices/Header/Header.slices";
+import { handleFirstPage } from "@/redux/slices/Pagination/Pagination.slices";
 
 export default function FooterComponent() {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = UseAppDispatch();
 
   const handleViewAllAnimes = () => {
     dispatch(toggleChangeHeader("small"));

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
-import { IListAnimesDataProps, IListAnimesProps } from "@/interfaces/listAnimes.interface";
+import { IListAnimesDataProps, IListAnimesProps } from "@/interfaces/IListAnimes.interface";
 
 import ListAnimesComponent from "./ListAnimes.component";
 
@@ -12,7 +12,7 @@ export function ListAnimes({ data }: Readonly<IListAnimesProps>) {
   useEffect(() => {
     const fetchDataAnimes = async () => {
       try {
-        await setListAnimes(data);
+        setListAnimes(data);
       } catch (error) {
         console.error(error);
       }

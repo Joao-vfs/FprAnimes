@@ -1,6 +1,6 @@
 import { css } from "@shadow-panda/styled-system/css";
 
-import { IButtonCustomProps } from "@/interfaces/buttonCustom.interface";
+import { IButtonCustomProps } from "@/interfaces/IButtonCustom.interface";
 
 export default function ButtonCustomComponent({
   width,
