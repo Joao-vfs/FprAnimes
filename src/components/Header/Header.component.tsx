@@ -1,83 +1,41 @@
-import Image from "next/image";
-import Link from "next/link";
+import { THEME } from "@/global/styles/theme";
+import * as S from "./Header.styles";
+import { Text } from "@/global/Typography/Typography.styles";
+import { BagIcon } from "@/icons";
 
-import { css } from "@shadow-panda/styled-system/css";
-
-import IcLogo from "@/assets/img/logo.svg";
-import IcLogoSmall from "@/assets/img/Untitled-1 4.svg";
-
-import { UseAppDispatch } from "@/redux/store";
-import { toggleChangeHeader } from "@/redux/slices/Header/Header.slices";
-
-import { IHeaderProps } from "@/interfaces/IHeader.interface";
-
-import { Search } from "..";
-
-export default function HeaderComponent({
-  otherHeader,
-}: Readonly<IHeaderProps>) {
-  const dispatch = UseAppDispatch();
-
-  return otherHeader === "small" ? (
-    <div
-      className={css({
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        h: "102px",
-        w: "full",
-        bgColor: "#000",
-        opacity: 0.9,
-        px: 10,
-      })}
-    >
-      <Link href={"/home"}>
-        <Image
-          src={IcLogoSmall}
-          alt=""
-          width={121}
-          height={75}
-          className={css({ cursor: "pointer" })}
-          onClick={() => dispatch(toggleChangeHeader("large"))}
-        />
-      </Link>
-      <Search />
-    </div>
-  ) : (
-    <div
-      className={css({
-        h: "505px",
-        w: "full",
-        bgColor: "#000",
-        display: "flex",
-        flexDirection: "column",
-      })}
-    >
-      <div
-        className={css({
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          p: 4,
-        })}
+export default function HeaderComponent() {
+  return (
+    <S.Header>
+      <Text
+        fontSize={THEME.fontSize.lg}
+        fontWeight={THEME.fontWeight.bold}
+        color={THEME.colors.primary}
+        lineHeight={"27.24px"}
       >
-        <Image src={IcLogo} alt="" width={192} height={118} />
-        <Search />
-      </div>
-      <div
-        className={css({
-          textAlign: "center",
-          fontSize: "64px",
-          fontWeight: 700,
-          color: "#fff",
-        })}
-      >
-        <h1>
-          O <strong className={css({ color: "#F46D1B" })}>Maior</strong>{" "}
-          Catálogo de <br />
-          <strong className={css({ color: "#34AC40" })}>Anime</strong> do Mundo
-        </h1>
-      </div>
-    </div>
+        We Movies
+      </Text>
+
+      <S.ContentHeader>
+        <S.ShoppingCartInfo>
+          <Text
+            fontSize={THEME.fontSize.md}
+            fontWeight={THEME.fontWeight.semiBold}
+            color={THEME.colors.primary}
+            lineHeight={"19.07px"}
+          >
+            Meu Carrinho
+          </Text>
+          <Text
+            fontSize={THEME.fontSize.md}
+            fontWeight={THEME.fontWeight.semiBold}
+            color={THEME.colors.secundary}
+            lineHeight={"19.07px"}
+          >
+            0 itens
+          </Text>
+        </S.ShoppingCartInfo>
+        <BagIcon />
+      </S.ContentHeader>
+    </S.Header>
   );
 }

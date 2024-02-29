@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Open_Sans } from "next/font/google";
+import BaseLayout from "@/global/layout/BaseLayout/BaseLayout";
+import StyledComponentsRegistry from "@/global/layout/StyledComponentsRegistry/StyledComponentsRegistry.registry";
 
-
-const inter = Inter({ subsets: ["latin"] });
+const OPENS_SANS = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Animes",
+  title: "We Movies",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={OPENS_SANS.className}>
+        <StyledComponentsRegistry>
+          <BaseLayout>{children}</BaseLayout>
+        </StyledComponentsRegistry>
+      </body>
     </html>
   );
 }

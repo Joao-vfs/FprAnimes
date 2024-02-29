@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ["media.kitsu.io"],
-  },
-};
+const nextConfig = {};
 
 export default nextConfig;
