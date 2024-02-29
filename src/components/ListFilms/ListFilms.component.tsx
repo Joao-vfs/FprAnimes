@@ -2,7 +2,7 @@ import * as S from "./ListFilms.styles";
 
 import { Cards } from "../Cards";
 
-export default function ListFilmsComponent({ list }: Readonly<any>) {
+export default function ListFilmsComponent({ list, ItemsAdd }: Readonly<any>) {
   return (
     <S.ContainerListFilms>
       {list.map((films: any) => (
@@ -10,6 +10,8 @@ export default function ListFilmsComponent({ list }: Readonly<any>) {
           <Cards
             image={films.image}
             title={films.title}
+            item={ItemsAdd}
+            filmId={films.id}
             titleButton={"ADICIONAR AO CARRINHO"}
             price={films.price}
           />

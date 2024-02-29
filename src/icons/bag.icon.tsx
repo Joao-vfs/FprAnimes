@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export function BagIcon() {
-  const Svg = styled.svg``;
+  const Svg = styled.svg`
+    cursor: pointer;
+  `;
 
   return (
     <Svg

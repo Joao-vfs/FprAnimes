@@ -2,11 +2,11 @@
 
 import React from "react";
 import { Children } from "./BaseLayout.styles";
-import { Header } from "@/components";
-import { ReduxProvaider } from "@/redux/provaider";
+import { ReduxProvaider } from "@/redux/provider";
 import { ThemeProvider } from "styled-components";
 import { THEME } from "../../styles/theme";
 import { ResetCSS } from "../../styles/resetCss";
+import { Header } from "../Header";
 
 const BaseLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

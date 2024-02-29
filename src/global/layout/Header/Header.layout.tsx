@@ -2,8 +2,9 @@ import { THEME } from "@/global/styles/theme";
 import * as S from "./Header.styles";
 import { Text } from "@/global/Typography/Typography.styles";
 import { BagIcon } from "@/icons";
+import Link from "next/link";
 
-export default function HeaderComponent() {
+export default function HeaderLayout({ itemsCart }: { itemsCart: number }) {
   return (
     <S.Header>
       <Text
@@ -31,10 +32,12 @@ export default function HeaderComponent() {
             color={THEME.colors.secundary}
             lineHeight={"19.07px"}
           >
-            0 itens
+            {itemsCart} itens
           </Text>
         </S.ShoppingCartInfo>
-        <BagIcon />
+        <Link href={'/cart'}>
+          <BagIcon />
+        </Link>
       </S.ContentHeader>
     </S.Header>
   );

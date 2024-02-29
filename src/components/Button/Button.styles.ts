@@ -14,7 +14,7 @@ const ButtonBase = styled.button<{ add: boolean }>`
   border: none;
 `;
 
-export const ButtonCustom = styled(ButtonBase)<{ add: boolean }>`
+export const ButtonCustom = styled(ButtonBase)`
   ${({ add }) =>
     add
       ? css`
@@ -23,4 +23,11 @@ export const ButtonCustom = styled(ButtonBase)<{ add: boolean }>`
       : css`
           background: ${({ theme }) => theme.colors.tertiary};
         `}
+`;
+
+export const ItemAdd = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 `;

@@ -3,13 +3,18 @@ import * as S from "./Cards.styles";
 import { Text } from "@/global/Typography/Typography.styles";
 import { THEME } from "@/global/styles/theme";
 import { Button } from "..";
+import { UseAppDispatch } from "@/redux/store";
+import { handleAddItemsCart } from "@/redux/slices/ListFilms/ListFilms.slices";
 
 export default function CardsComponent({
   image,
   title,
+  item,
+  filmId,
   titleButton,
   price,
 }: Readonly<any>) {
+  const dispatch = UseAppDispatch()
   return (
     <S.ContainerCard>
       <S.ImageFilm src={image} alt={title} />
@@ -31,7 +36,7 @@ export default function CardsComponent({
           R$ {price}
         </Text>
       </S.Teste>
-      <Button title={titleButton} />
+      <Button title={titleButton} item={item} onClick={() => dispatch(handleAddItemsCart({itemId: filmId}))} />
     </S.ContainerCard>
   );
 }
