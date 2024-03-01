@@ -1,20 +1,17 @@
 import * as S from "./Cards.styles";
 
-import { Text } from "@/global/Typography/Typography.styles";
+import { Text } from "@/global/typography/Typography.styles";
 import { THEME } from "@/global/styles/theme";
 import { Button } from "..";
-import { UseAppDispatch } from "@/redux/store";
-import { handleAddItemsCart } from "@/redux/slices/ListFilms/ListFilms.slices";
+import { CartIcon } from "@/icons";
 
 export default function CardsComponent({
   image,
   title,
-  item,
-  filmId,
-  titleButton,
   price,
+  onClick,
+  add,
 }: Readonly<any>) {
-  const dispatch = UseAppDispatch()
   return (
     <S.ContainerCard>
       <S.ImageFilm src={image} alt={title} />
@@ -36,7 +33,28 @@ export default function CardsComponent({
           R$ {price}
         </Text>
       </S.Teste>
-      <Button title={titleButton} item={item} onClick={() => dispatch(handleAddItemsCart({itemId: filmId}))} />
+      <Button add={add} onClick={onClick}>
+        <S.ItemAdd>
+          <CartIcon />
+          <Text
+            fontSize={THEME.fontSize.nano}
+            fontWeight={THEME.fontWeight.normal}
+            color={THEME.colors.primary}
+            lineHeight={"16.34px"}
+          >
+            {add ? 1 : 0}
+          </Text>
+        </S.ItemAdd>
+        <Text
+          fontSize={THEME.fontSize.nano}
+          fontWeight={THEME.fontWeight.bold}
+          color={THEME.colors.primary}
+          lineHeight={"16.34px"}
+          pointer
+        >
+          {add ? "ITEM ADICIONADO" : "ADICIONAR AO CARRINHO"}
+        </Text>
+      </Button>
     </S.ContainerCard>
   );
 }

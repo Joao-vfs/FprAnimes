@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import { THEME } from "../../styles/theme";
 import { ResetCSS } from "../../styles/resetCss";
 import { Header } from "../Header";
+import Box from "../Box";
 
 const BaseLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

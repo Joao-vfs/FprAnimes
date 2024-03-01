@@ -4,14 +4,16 @@ export const THEME = {
     primary: "#FFFFFF",
     secundary: "#999999",
     tertiary: "#009EDD",
-    teste: '#333333',
+    teste: "#333333",
+    teste2: '#D9D9D9',
     success: "#039B00",
   },
   fontSize: {
-    nano: '12px',
+    nano: "12px",
     sm: "14px",
     md: "16px",
     lg: "20px",
+    xg: "24px",
   },
   fontWeight: {
     normal: 400,
@@ -25,7 +27,7 @@ export const THEME = {
   },
   paddings: {
     nano: "8px",
-    xxs: '10px',
+    xxs: "10px",
     xs: "12px",
     sm: "14px",
     md: "16px",

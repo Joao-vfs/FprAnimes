@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   list: {
-    itemsCart: {},
+    itemsCart: [],
+    filmsSelected: [],
   },
 } as any;
 
@@ -11,21 +12,29 @@ export const listFilmsSlice = createSlice({
   initialState,
   reducers: {
     handleAddItemsCart: (state, action) => {
-      const { itemId } = action.payload;
-      const currentCount = state.list.itemsCart[itemId] || 0;
-      if (currentCount < 6) {
-        state.list.itemsCart[itemId] = currentCount + 1;
-      }
+      state.list.itemsCart = [...state.list.itemsCart, action.payload];
     },
     handleRemoveItemsCart: (state, action) => {
-      const { itemId } = action.payload;
-      if (state.list.itemsCart[itemId] && state.list.itemsCart[itemId] > 0) {
-        state.list.itemsCart[itemId] -= 1;
-      }
+      state.list.itemsCart = state.list.itemsCart.filter(
+        (itemId: number) => itemId !== action.payload
+      );
+    },
+    handleFilmsSelected: (state, action) => {
+      state.list.filmsSelected = [...state.list.filmsSelected, action.payload];
+    },
+    handleRemoveFilm: (state, action) => {
+      state.list.filmsSelected = state.list.filmsSelected.filter(
+        (film: { id: string; }) => film.id !== action.payload
+      );
     },
   },
 });
 
-export const { handleAddItemsCart } = listFilmsSlice.actions;
+export const {
+  handleAddItemsCart,
+  handleRemoveItemsCart,
+  handleFilmsSelected,
+  handleRemoveFilm,
+} = listFilmsSlice.actions;
 
 export default listFilmsSlice.reducer;

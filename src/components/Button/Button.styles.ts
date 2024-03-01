@@ -24,10 +24,3 @@ export const ButtonCustom = styled(ButtonBase)`
           background: ${({ theme }) => theme.colors.tertiary};
         `}
 `;
-
-export const ItemAdd = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-`;

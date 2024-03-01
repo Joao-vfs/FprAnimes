@@ -24,3 +24,10 @@ export const ImageFilm = styled.img`
  width: 147px;
  height: 188px;
 `
+
+export const ItemAdd = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+`;

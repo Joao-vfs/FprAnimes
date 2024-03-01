@@ -1,41 +1,54 @@
 import { THEME } from "@/global/styles/theme";
 import * as S from "./Header.styles";
-import { Text } from "@/global/Typography/Typography.styles";
+import { Text } from "@/global/typography/Typography.styles";
 import { BagIcon } from "@/icons";
 import Link from "next/link";
 
-export default function HeaderLayout({ itemsCart }: { itemsCart: number }) {
+export default function HeaderLayout({
+  itemsCart,
+  isMobile,
+}: {
+  itemsCart: number[];
+  isMobile: boolean;
+}) {
+  const itemsAdd = itemsCart.length;
+
   return (
     <S.Header>
-      <Text
-        fontSize={THEME.fontSize.lg}
-        fontWeight={THEME.fontWeight.bold}
-        color={THEME.colors.primary}
-        lineHeight={"27.24px"}
-      >
-        We Movies
-      </Text>
-
+      <Link href={"/"}>
+        <Text
+          fontSize={THEME.fontSize.lg}
+          fontWeight={THEME.fontWeight.bold}
+          color={THEME.colors.primary}
+          lineHeight={"27.24px"}
+          pointer
+        >
+          We Movies
+        </Text>
+      </Link>
       <S.ContentHeader>
         <S.ShoppingCartInfo>
-          <Text
-            fontSize={THEME.fontSize.md}
-            fontWeight={THEME.fontWeight.semiBold}
-            color={THEME.colors.primary}
-            lineHeight={"19.07px"}
-          >
-            Meu Carrinho
-          </Text>
+          {!isMobile && (
+            <Text
+              fontSize={THEME.fontSize.md}
+              fontWeight={THEME.fontWeight.semiBold}
+              color={THEME.colors.primary}
+              lineHeight={"19.07px"}
+            >
+              Meu Carrinho
+            </Text>
+          )}
+
           <Text
             fontSize={THEME.fontSize.md}
             fontWeight={THEME.fontWeight.semiBold}
             color={THEME.colors.secundary}
             lineHeight={"19.07px"}
           >
-            {itemsCart} itens
+            {itemsAdd} itens
           </Text>
         </S.ShoppingCartInfo>
-        <Link href={'/cart'}>
+        <Link href={"/cart"}>
           <BagIcon />
         </Link>
       </S.ContentHeader>
