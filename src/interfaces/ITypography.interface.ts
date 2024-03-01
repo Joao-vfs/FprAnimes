@@ -1,4 +1,4 @@
-export interface ITypographProps {
+export interface ITypographyProps {
     fontSize?: string;
     fontWeight?: number;
     color?: string;
@@ -6,5 +6,6 @@ export interface ITypographProps {
     lineHeight?: number | string;
     children: React.ReactNode;
     onClick?: () => void;
+    textAling?: 'left' | 'right' | 'center';
   }
   

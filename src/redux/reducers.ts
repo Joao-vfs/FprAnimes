@@ -1,7 +1,6 @@
 import { combineReducers } from "@reduxjs/toolkit";
-
-import listFilmsSlice from "@/redux/slices/ListFilms/ListFilms.slices";
+import WeMoviesSlice from "@/redux/slices/WeMovies/weMovies.slices";
 
 export const rootReducers = combineReducers({
-  listFilmsSlice,
+  WeMoviesSlice,
 });

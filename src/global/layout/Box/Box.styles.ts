@@ -17,6 +17,6 @@ export const Container = styled.div<IBoxProps>`
   flex-direction: ${({ flexDirection }) => (flexDirection ? "column" : "row")};
   gap: ${({ gap }) => gap ?? "0"};
   padding: ${({ padding }) => padding ?? "0"};
-  flex-wrap: ${({ flexWrap }) => (flexWrap ? "wrap" : "no-wrap")};
+  flex-wrap: ${({ flexWrap }) => (flexWrap ? "wrap" : "nowrap")};
   border-radius: ${({ borderRadius }) => borderRadius};
 `;

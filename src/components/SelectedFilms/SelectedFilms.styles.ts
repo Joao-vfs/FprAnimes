@@ -59,8 +59,8 @@ export const ImageProduct = styled.img`
   margin-right: 40px;
 `;
 
-export const Hr = styled.hr`
-  color: ${({ theme }) => theme.colors.secundary};
+export const Hr = styled.div`
+  background-color: ${({ theme }) => theme.colors.secundary};
   width: 100%;
   height: 1px;
   margin-bottom: 25px;
@@ -71,4 +71,10 @@ export const ContentPrice = styled.div`
   align-items: center;
   justify-content: center;
   gap: ${({ theme }) => theme.gaps.lg};
+
+  @media only screen and (max-width: 768px) {
+    justify-content: flex-end;
+  }
 `;
+
+export const CheckoutContent = styled.div``

@@ -1,9 +1,9 @@
 import * as S from "./Cards.styles";
 
-import { Text } from "@/global/typography/Typography.styles";
 import { THEME } from "@/global/styles/theme";
 import { Button } from "..";
 import { CartIcon } from "@/icons";
+import Text from "@/global/Typography/Text/Text";
 
 export default function CardsComponent({
   image,

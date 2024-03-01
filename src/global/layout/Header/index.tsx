@@ -7,7 +7,7 @@ import { isMobile } from "@/global/isMobile/isMobile";
 
 export function Header() {
   const itemsCart = UseAppSelector(
-    (state) => state.listFilmsSlice.list.itemsCart
+    (state) => state.WeMoviesSlice.weMovies.itemsCart
   );
   return <HeaderLayout itemsCart={itemsCart} isMobile={isMobile()} />;
 }

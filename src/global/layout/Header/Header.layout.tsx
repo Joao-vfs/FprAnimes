@@ -1,8 +1,10 @@
 import { THEME } from "@/global/styles/theme";
 import * as S from "./Header.styles";
-import { Text } from "@/global/typography/Typography.styles";
 import { BagIcon } from "@/icons";
 import Link from "next/link";
+import { UseAppDispatch } from "@/redux/store";
+import { handleResetState } from "@/redux/slices/WeMovies/weMovies.slices";
+import Text from "@/global/Typography/Text/Text";
 
 export default function HeaderLayout({
   itemsCart,
@@ -11,11 +13,12 @@ export default function HeaderLayout({
   itemsCart: number[];
   isMobile: boolean;
 }) {
+  const dispatch = UseAppDispatch();
   const itemsAdd = itemsCart.length;
 
   return (
     <S.Header>
-      <Link href={"/"}>
+      <Link href={"/"} onClick={() => dispatch(handleResetState())}>
         <Text
           fontSize={THEME.fontSize.lg}
           fontWeight={THEME.fontWeight.bold}

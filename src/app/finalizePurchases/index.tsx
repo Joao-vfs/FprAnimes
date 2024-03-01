@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 import Box from "@/global/layout/Box";
-import { Text } from "@/global/typography/Typography.styles";
 
 import FinalizePurchases from "@/assets/images/Group 34.svg";
 import { THEME } from "@/global/styles/theme";
 import { Button } from "@/components";
 import { useRouter } from "next/navigation";
+import Text from "@/global/Typography/Text/Text";
 
 export default function FinalizePurchasesPage({
   isMobile
@@ -22,9 +22,9 @@ export default function FinalizePurchasesPage({
       flexDirection
       alignItems="center"
       justifyContent="space-between"
-      minWidth={isMobile ? "343px" :"960px"}
-      minHeight={isMobile ? "574px" :"532px"}
-      padding="64px"
+      minWidth={isMobile ? "343px" : "960px"}
+      minHeight={isMobile ? "574px" : "532px"}
+      padding={!isMobile ? "64px" : '64px 0'}
       borderRadius={THEME.borderRadius.small}
     >
       <Text

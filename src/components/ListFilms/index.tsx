@@ -11,7 +11,7 @@ import { UseAppSelector } from "@/redux/store";
 export function ListFilms() {
   const [list, setList] = useState<IMovieProps[]>([]);
   const selectedIds = UseAppSelector(
-    (state) => state.listFilmsSlice.list.itemsCart
+    (state) => state.WeMoviesSlice.weMovies.itemsCart
   );
   const { handleFilmClick } = FilmCartHandler();
 

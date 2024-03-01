@@ -1,12 +1,14 @@
 import Image from "next/image";
 
-import Box from "@/global/layout/Box";
-import { Text } from "@/global/typography/Typography.styles";
+import * as S from './cart.styles'
 
-import WithoutItems from "@/assets/images/Group 43.svg";
+import Box from "@/global/layout/Box";
+
+import WithoutItems from "@/assets/images/Group.svg";
 import { THEME } from "@/global/styles/theme";
 import { Button, SelectedFilms } from "@/components";
 import { useRouter } from "next/navigation";
+import Text from "@/global/Typography/Text/Text";
 
 export default function CartPage({
   itemsCart,
@@ -28,9 +30,9 @@ export default function CartPage({
       flexDirection
       alignItems="center"
       justifyContent="space-between"
-      minWidth={isMobile ? "343px" : "960px"}
+      maxWidth={isMobile ? "343px" : "960px"}
       minHeight="532px"
-      padding="64px"
+      padding={!isMobile ? "64px" : '64px 0'}
       borderRadius={THEME.borderRadius.small}
     >
       <Text
@@ -42,6 +44,7 @@ export default function CartPage({
         Parece que não há nada por aqui :(
       </Text>
       <Image src={WithoutItems} alt="" />
+      <S.Hr />
       <Button onClick={() => router.push("/")}>
         <Text
           fontSize={THEME.fontSize.sm}

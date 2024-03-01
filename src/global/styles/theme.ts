@@ -6,6 +6,7 @@ export const THEME = {
     tertiary: "#009EDD",
     teste: "#333333",
     teste2: '#D9D9D9',
+    test3: '#3F3D56',
     success: "#039B00",
   },
   fontSize: {

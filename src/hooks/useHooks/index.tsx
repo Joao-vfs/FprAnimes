@@ -7,7 +7,7 @@ import {
   handleAddItemsCart,
   handleFilmsSelected,
   handleRemoveItemsCart,
-} from "@/redux/slices/ListFilms/ListFilms.slices";
+} from "@/redux/slices/WeMovies/weMovies.slices";
 
 export function FilmCartHandler() {
   const [selectedFilms, setSelectedFilms] = useState<IMovieProps[]>([]);

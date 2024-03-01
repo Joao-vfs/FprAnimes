@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-import { ITypographProps } from "@/interfaces/ITypography.interface";
+import { ITypographyProps } from "@/interfaces/ITypography.interface";
 
-export const Text = styled.span<ITypographProps>`
+export const Paragraph = styled.span<ITypographyProps>`
   font-size: ${({ fontSize }) => fontSize};
   font-weight: ${({ fontWeight }) => fontWeight};
   cursor: ${({ pointer }) => (pointer ? "pointer" : "auto")};
   line-height: ${({ lineHeight }) => lineHeight};
   color: ${({ color }) => color};
+  text-align: ${({ textAling }) => textAling};
 `;
