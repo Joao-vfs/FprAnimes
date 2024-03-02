@@ -4,22 +4,24 @@ import { Paragraph } from "./Text.styles";
 
 const Text = ({
   children,
+  onClick,
   fontSize,
   fontWeight,
   pointer,
   color,
   lineHeight,
-  textAling,
+  textAlign,
   ...props
 }: Readonly<ITypographyProps>) => {
   return (
     <Paragraph
+      onClick={onClick}
       fontSize={fontSize}
       fontWeight={fontWeight}
       color={color}
       pointer={pointer}
       lineHeight={lineHeight}
-      textAling={textAling}
+      textAlign={textAlign}
       {...props}
     >
       {children}

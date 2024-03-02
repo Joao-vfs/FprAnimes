@@ -1,34 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import ListFilmsComponent from "./ListFilms.component";
-import { getFilms } from "@/services/query";
-import { IMovieProps } from "@/interfaces/IMovies.interface";
 
-import { FilmCartHandler } from "@/hooks/useHooks";
-import { UseAppSelector } from "@/redux/store";
+import { useFilm } from "@/hooks/useHooks";
 
 export function ListFilms() {
-  const [list, setList] = useState<IMovieProps[]>([]);
-  const selectedIds = UseAppSelector(
-    (state) => state.WeMoviesSlice.weMovies.itemsCart
-  );
-  const { handleFilmClick } = FilmCartHandler();
-
-  useEffect(() => {
-    const fetchListFilms = async () => {
-      const res = await getFilms();
-      setList(res);
-    };
-    fetchListFilms();
-  }, []);
+  const { list, loading, handleCardClick, addStatus } = useFilm();
 
   return (
     <ListFilmsComponent
       list={list}
-      setList={setList}
-      handleFilmClick={handleFilmClick}
-      selectedIds={selectedIds}
+      loading={loading}
+      addStatus={addStatus}
+      handleCardClick={handleCardClick}
     />
   );
 }

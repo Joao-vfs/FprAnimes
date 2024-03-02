@@ -1,19 +1,23 @@
 import Box from "@/global/layout/Box";
 import { Cards } from "../Cards";
 import { formatPrice } from "@/utils/utils";
+import { Loading } from "..";
 
 export default function ListFilmsComponent({
   list,
-  handleFilmClick,
-  selectedIds,
+  loading,
+  handleCardClick,
+  addStatus,
 }: Readonly<any>) {
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <Box
       display={"flex"}
       alignItems={"center"}
       justifyContent={"center"}
       flexWrap
-      width={"65%"}
+      width={"77%"}
       gap={"16px"}
     >
       {list.map((films: any) => (
@@ -22,8 +26,8 @@ export default function ListFilmsComponent({
             image={films.image}
             title={films.title}
             price={formatPrice(films.price)}
-            onClick={() => handleFilmClick(films)}
-            add={selectedIds.includes(films.id)}
+            onClick={() => handleCardClick(films)}
+            add={addStatus[films.id]}
           />
         </div>
       ))}

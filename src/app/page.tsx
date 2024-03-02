@@ -1,8 +1,10 @@
 "use client";
 
-import { ListFilms } from "@/components";
+import { ListFilms, Loading } from "@/components";
+import { useFilm } from "@/hooks/useHooks";
 
 export default function HomePage() {
-  
-  return <ListFilms />
+  const { loading } = useFilm();
+
+  return loading ? <Loading /> : <ListFilms />;
 }

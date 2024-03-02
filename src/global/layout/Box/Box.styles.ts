@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { IBoxProps } from "@/interfaces/IBox.interface";
 
 export const Container = styled.div<IBoxProps>`
-  background-color: ${({ backgroundColor }) =>
-    backgroundColor ?? "transparent"};
+  background-color: ${({ backGround }) =>
+    backGround ?? "transparent"};
   height: ${({ height }) => height ?? "auto"};
   width: ${({ width }) => width ?? "auto"};
   max-width: ${({ maxWidth, width }) => width !== "auto" && maxWidth};

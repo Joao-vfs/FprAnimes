@@ -6,6 +6,6 @@ export const Children = styled.div`
   align-items: center;
   justify-content: center;
   @media (min-width: 992px) {
-    margin: 96px 128px 32px;
+    margin: 33px 128px 0px;
   }
 `;

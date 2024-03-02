@@ -1,26 +1,19 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-const ButtonBase = styled.button<{ add: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: ${({ theme }) => theme.gaps.lg};
+import { IButtonProps } from "@/interfaces/IButton.interface";
 
-  height: 40px;
-  width: 287px;
-  padding: ${({ theme }) => theme.paddings.xxs};
-  background: ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.borderRadius.small};
-  border: none;
-`;
-
-export const ButtonCustom = styled(ButtonBase)`
-  ${({ add }) =>
-    add
-      ? css`
-          background: ${({ theme }) => theme.colors.success};
-        `
-      : css`
-          background: ${({ theme }) => theme.colors.tertiary};
-        `}
+export const ButtonCustom = styled.button<IButtonProps>`
+  background: ${({ backGround }) =>
+    backGround ?? "transparent"};
+  height: ${({ height }) => height ?? "auto"};
+  width: ${({ width }) => width ?? "auto"};
+  display: ${({ display }) => display ?? "block"};
+  justify-content: ${({ justifyContent }) => justifyContent ?? "center"};
+  align-items: ${({ alignItems }) => alignItems ?? "center"};
+  flex-direction: ${({ flexDirection }) => (flexDirection ? "column" : "row")};
+  gap: ${({ gap }) => gap ?? "0"};
+  padding: ${({ padding }) => padding ?? "0"};
+  flex-wrap: ${({ flexWrap }) => (flexWrap ? "wrap" : "nowrap")};
+  border-radius: ${({ borderRadius }) => borderRadius};
+  border: ${({ border }) => border};
 `;

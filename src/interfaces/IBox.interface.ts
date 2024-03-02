@@ -2,8 +2,7 @@ import { ReactNode } from "react";
 
 export interface IBoxProps {
     children: ReactNode;
-    onClick?: () => void;
-    backgroundColor?: string;
+    backGround?: string;
     height?: string;
     width?: string;
     maxWidth?: string;

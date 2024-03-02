@@ -14,8 +14,15 @@ const BaseLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <ReduxProvaider>
       <ThemeProvider theme={THEME}>
         <ResetCSS />
-        <Header />
-        <Children>{children}</Children>
+        <Box
+          display={"flex"}
+          flexDirection
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Header />
+          <Children>{children}</Children>
+        </Box>
       </ThemeProvider>
     </ReduxProvaider>
   );

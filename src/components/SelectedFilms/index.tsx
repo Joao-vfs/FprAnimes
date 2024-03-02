@@ -1,12 +1,26 @@
 "use client";
 
+import { useFilm } from "@/hooks/useHooks";
 import SelectedFilmsComponent from "./SelectedFilms.component";
-import { UseAppSelector } from "@/redux/store";
 
 export function SelectedFilms() {
-  const selectedFilms = UseAppSelector(
-    (state) => state.WeMoviesSlice.weMovies.filmsSelected
-  );
+  const {
+    loading,
+    selectedPrice,
+    handleQuantityChange,
+    prices,
+    handleRemoveFilmId,
+    handleRedirectRouter,
+  } = useFilm();
 
-  return <SelectedFilmsComponent selectedFilms={selectedFilms} />;
+  return (
+    <SelectedFilmsComponent
+      loading={loading}
+      selectedFilms={selectedPrice}
+      handleQuantityChange={handleQuantityChange}
+      prices={prices}
+      handleRemoveFilmId={handleRemoveFilmId}
+      handleRedirectRouter={handleRedirectRouter}
+    />
+  );
 }

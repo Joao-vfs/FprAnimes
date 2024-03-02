@@ -1,8 +1,10 @@
 "use client";
 
-import { isMobile } from "@/global/isMobile/isMobile";
 import FinalizePurchasesPage from ".";
+import { useFilm } from "@/hooks/useHooks";
 
 export default function FinalizePurchases() {
-  return <FinalizePurchasesPage isMobile={isMobile()} />;
+  const { handleBackHome, loading } = useFilm();
+
+  return <FinalizePurchasesPage loading={loading} handleBackHome={handleBackHome} />;
 }

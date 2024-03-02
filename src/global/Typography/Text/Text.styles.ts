@@ -8,5 +8,5 @@ export const Paragraph = styled.span<ITypographyProps>`
   cursor: ${({ pointer }) => (pointer ? "pointer" : "auto")};
   line-height: ${({ lineHeight }) => lineHeight};
   color: ${({ color }) => color};
-  text-align: ${({ textAling }) => textAling};
+  text-align: ${({ textAlign }) => textAlign};
 `;

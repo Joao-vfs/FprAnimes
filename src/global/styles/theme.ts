@@ -25,6 +25,7 @@ export const THEME = {
     sm: "8px",
     md: "10px",
     lg: "12px",
+    xg: '15px'
   },
   paddings: {
     nano: "8px",

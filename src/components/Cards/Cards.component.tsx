@@ -33,7 +33,19 @@ export default function CardsComponent({
           R$ {price}
         </Text>
       </S.Teste>
-      <Button add={add} onClick={onClick}>
+      <Button
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={add ? "space-evenly" : "center"}
+        gap={add ? "0" : THEME.gaps.lg}
+        height={"40px"}
+        width={"287px"}
+        padding={THEME.paddings.xxs}
+        backGround={add ? THEME.colors.success : THEME.colors.tertiary}
+        borderRadius={THEME.borderRadius.small}
+        border={"none"}
+        onClick={onClick}
+      >
         <S.ItemAdd>
           <CartIcon />
           <Text

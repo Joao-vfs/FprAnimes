@@ -8,8 +8,7 @@ import { IBoxProps } from "@/interfaces/IBox.interface";
 
 export const BoxLayout = ({
   children,
-  onClick,
-  backgroundColor,
+  backGround,
   height,
   width,
   maxWidth,
@@ -27,8 +26,7 @@ export const BoxLayout = ({
 }: Readonly<IBoxProps>) => {
   return (
     <Container
-      onClick={onClick}
-      backgroundColor={backgroundColor}
+      backGround={backGround}
       height={height}
       width={width}
       maxWidth={maxWidth}

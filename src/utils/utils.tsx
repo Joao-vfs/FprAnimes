@@ -11,10 +11,13 @@ export const formatPrice = (price: number): string => {
   return priceFormatted;
 };
 
-export function totalPrice(moviesInCart: any): number {
-  const total = moviesInCart
-    .map((objeto: { price: number }) => objeto.price)
-    .reduce((acc: number, currentValue: number) => acc + currentValue, 0);
-
-  return total;
-}
+export const totalPriceWithQuantity = (
+  selectedFilms: any,
+  prices: { [filmId: string]: number }
+): number => {
+  return selectedFilms.reduce(
+    (acc: any, movie: { id: string | number; price: any }) =>
+      acc + (prices[movie.id] || movie.price),
+    0
+  );
+};

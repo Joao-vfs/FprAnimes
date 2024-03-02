@@ -1,37 +1,42 @@
 import { THEME } from "@/global/styles/theme";
 import * as S from "./Header.styles";
 import { BagIcon } from "@/icons";
-import Link from "next/link";
-import { UseAppDispatch } from "@/redux/store";
-import { handleResetState } from "@/redux/slices/WeMovies/weMovies.slices";
 import Text from "@/global/Typography/Text/Text";
+import { useRouter } from "next/navigation";
+import { isMobile } from "@/global/isMobile/isMobile";
 
 export default function HeaderLayout({
   itemsCart,
-  isMobile,
+  handleBackHome,
 }: {
   itemsCart: number[];
-  isMobile: boolean;
+  handleBackHome: () => void;
 }) {
-  const dispatch = UseAppDispatch();
+  const router = useRouter();
   const itemsAdd = itemsCart.length;
 
+  const handleRedirectCart = () => {
+    if (itemsAdd > 0) {
+      router.push("/cart");
+    } else {
+      router.push("/noPurchases");
+    }
+  };
   return (
     <S.Header>
-      <Link href={"/"} onClick={() => dispatch(handleResetState())}>
-        <Text
-          fontSize={THEME.fontSize.lg}
-          fontWeight={THEME.fontWeight.bold}
-          color={THEME.colors.primary}
-          lineHeight={"27.24px"}
-          pointer
-        >
-          We Movies
-        </Text>
-      </Link>
+      <Text
+        onClick={handleBackHome}
+        fontSize={THEME.fontSize.lg}
+        fontWeight={THEME.fontWeight.bold}
+        color={THEME.colors.primary}
+        lineHeight={"27.24px"}
+        pointer
+      >
+        We Movies
+      </Text>
       <S.ContentHeader>
         <S.ShoppingCartInfo>
-          {!isMobile && (
+          {!isMobile() && (
             <Text
               fontSize={THEME.fontSize.md}
               fontWeight={THEME.fontWeight.semiBold}
@@ -51,9 +56,7 @@ export default function HeaderLayout({
             {itemsAdd} itens
           </Text>
         </S.ShoppingCartInfo>
-        <Link href={"/cart"}>
-          <BagIcon />
-        </Link>
+        <BagIcon onClick={handleRedirectCart} />
       </S.ContentHeader>
     </S.Header>
   );

@@ -2,19 +2,20 @@ import Image from "next/image";
 
 import Box from "@/global/layout/Box";
 
-import FinalizePurchases from "@/assets/images/Group 34.svg";
+import WithoutItems from "@/assets/images/Group 43.svg";
 import { THEME } from "@/global/styles/theme";
 import { Button, Loading } from "@/components";
 import Text from "@/global/Typography/Text/Text";
 import { isMobile } from "@/global/isMobile/isMobile";
 
-export default function FinalizePurchasesPage({
+export default function NoPurchasesPage({
   handleBackHome,
   loading,
 }: {
-  loading: boolean;
   handleBackHome: () => void;
+  loading: boolean;
 }) {
+  const widthImage = isMobile() ? 344 : 444;
   const renderTextMobile = () => {
     if (isMobile()) {
       return (
@@ -26,7 +27,7 @@ export default function FinalizePurchasesPage({
             lineHeight={"30.24px"}
             textAlign="center"
           >
-            Compra realizada <br /> com sucesso!
+            Parece que não <br /> há nada por aqui :(
           </Text>
         </Box>
       );
@@ -38,7 +39,7 @@ export default function FinalizePurchasesPage({
           color={THEME.colors.dark}
           lineHeight={"16.34px"}
         >
-          Compra realizada com sucesso!
+          Parece que não há nada por aqui :(
         </Text>
       );
     }
@@ -54,13 +55,14 @@ export default function FinalizePurchasesPage({
       alignItems="center"
       justifyContent="space-between"
       minWidth={isMobile() ? "343px" : "960px"}
-      minHeight={isMobile() ? "574px" : "532px"}
+      minHeight={"532px"}
       padding={isMobile() ? "64px 0" : "64px"}
       gap={"32px"}
       borderRadius={THEME.borderRadius.small}
     >
       {renderTextMobile()}
-      <Image src={FinalizePurchases} alt="" />
+      <Image src={WithoutItems} alt="" width={widthImage} />
+
       <Button
         display={"flex"}
         alignItems={"center"}

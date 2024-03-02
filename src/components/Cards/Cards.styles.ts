@@ -11,6 +11,10 @@ width: 309px;
 padding: ${({theme}) => theme.paddings.xxs} 11px;
 background: ${({theme}) => theme.colors.primary};
 border-radius: ${({theme}) => theme.borderRadius.small};
+
+@media only screen and (max-width: 768px) {
+  width: 343px
+}
 `
 
 export const Teste = styled.div`

@@ -7,8 +7,7 @@ import { BoxLayout } from "./Box.layout";
 
 const Box = ({
   children,
-  onClick,
-  backgroundColor,
+  backGround,
   height,
   width,
   maxWidth,
@@ -26,8 +25,7 @@ const Box = ({
 }: Readonly<IBoxProps>) => {
   return (
     <BoxLayout
-      onClick={onClick}
-      backgroundColor={backgroundColor}
+      backGround={backGround}
       height={height}
       width={width}
       maxWidth={maxWidth}
