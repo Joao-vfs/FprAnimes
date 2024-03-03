@@ -1,23 +1,25 @@
-import { LessIcon } from "@/icons/less.icon";
 import * as S from "./SumQuantity.styles";
 
 import Box from "@/global/layout/Box";
-import { PlusIcon } from "@/icons/plus.icon";
 import { THEME } from "@/global/styles/theme";
 
-interface CounterInputProps {
-  decrement: () => void;
-  increment: () => void;
-  value: number;
-}
+import { LessIcon } from "@/icons/less.icon";
+import { PlusIcon } from "@/icons/plus.icon";
+
+import { ICounterInputProps } from "@/interfaces/ISumQuantity.interface";
 
 const SumQuantityComponent = ({
   decrement,
   increment,
   value,
-}: Readonly<CounterInputProps>) => {
+}: Readonly<ICounterInputProps>) => {
   return (
-    <Box display="flex" alignItems="center" justifyContent="flex-start" gap={THEME.gaps.md}>
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="flex-start"
+      gap={THEME.gaps.md}
+    >
       <S.IcLess onClick={decrement}>
         <LessIcon />
       </S.IcLess>

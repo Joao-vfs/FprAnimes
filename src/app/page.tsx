@@ -1,7 +1,8 @@
 "use client";
 
-import { ListFilms, Loading } from "@/components";
 import { useFilm } from "@/hooks/useHooks";
+
+import { ListFilms, Loading } from "@/components";
 
 export default function HomePage() {
   const { loading } = useFilm();

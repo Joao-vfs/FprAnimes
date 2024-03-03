@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import SumQuantityComponent from "./SumQuantity.component";
-import { useFilm } from "@/hooks/useHooks";
 import { useRouter } from "next/navigation";
 
-interface SumQuantityProps {
-  onChange: (quantity: number) => void;
-  filmId: string;
-}
+import React, { useState } from "react";
 
-export function SumQuantity({ onChange, filmId }: SumQuantityProps) {
+import { useFilm } from "@/hooks/useHooks";
+
+import { ISumQuantityProps } from "@/interfaces/ISumQuantity.interface";
+
+import SumQuantityComponent from "./SumQuantity.component";
+
+export function SumQuantity({ onChange, filmId }: Readonly<ISumQuantityProps>) {
   const [value, setValue] = useState(1);
   const { handleRemoveFilmId } = useFilm();
   const router = useRouter();
@@ -21,7 +21,7 @@ export function SumQuantity({ onChange, filmId }: SumQuantityProps) {
     });
     if (value === 1) {
       handleRemoveFilmId(filmId);
-      router.push('/noPurchases')
+      router.push("/noPurchases");
     }
   };
 

@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
-import { ITypographyProps } from "@/interfaces/ITypography.interface";
+
 import { Paragraph } from "./Text.styles";
+
+import { ITypographyProps } from "@/interfaces/ITypography.interface";
 
 const Text = ({
   children,

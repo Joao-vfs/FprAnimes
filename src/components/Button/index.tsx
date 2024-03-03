@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
-import ButtonComponent from "./Button.component";
+
 import { IButtonProps } from "@/interfaces/IButton.interface";
+
+import ButtonComponent from "./Button.component";
 
 export function Button({
   children,

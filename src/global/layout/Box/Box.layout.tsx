@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 import { Container } from "./Box.styles";
@@ -23,6 +21,7 @@ export const BoxLayout = ({
   padding,
   flexWrap,
   borderRadius,
+  ...props
 }: Readonly<IBoxProps>) => {
   return (
     <Container
@@ -41,6 +40,7 @@ export const BoxLayout = ({
       padding={padding}
       flexWrap={flexWrap}
       borderRadius={borderRadius}
+      {...props}
     >
       {children}
     </Container>

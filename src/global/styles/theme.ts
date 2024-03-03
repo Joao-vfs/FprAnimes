@@ -4,9 +4,8 @@ export const THEME = {
     primary: "#FFFFFF",
     secundary: "#999999",
     tertiary: "#009EDD",
-    teste: "#333333",
-    teste2: '#D9D9D9',
-    test3: '#3F3D56',
+    quaternary: "#333333",
+    assistText: '#D9D9D9',
     success: "#039B00",
   },
   fontSize: {

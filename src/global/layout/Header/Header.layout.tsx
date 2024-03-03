@@ -1,17 +1,19 @@
-import { THEME } from "@/global/styles/theme";
-import * as S from "./Header.styles";
-import { BagIcon } from "@/icons";
-import Text from "@/global/Typography/Text/Text";
 import { useRouter } from "next/navigation";
+
+import * as S from "./Header.styles";
+
+import { THEME } from "@/global/styles/theme";
+import Text from "@/global/Typography/Text/Text";
 import { isMobile } from "@/global/isMobile/isMobile";
+
+import { BagIcon } from "@/icons/bag.icon";
+
+import { IHeaderLayoutProps } from "@/interfaces/IHeader.interface";
 
 export default function HeaderLayout({
   itemsCart,
   handleBackHome,
-}: {
-  itemsCart: number[];
-  handleBackHome: () => void;
-}) {
+}: Readonly<IHeaderLayoutProps>) {
   const router = useRouter();
   const itemsAdd = itemsCart.length;
 

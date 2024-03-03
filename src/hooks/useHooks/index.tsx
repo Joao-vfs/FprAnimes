@@ -1,19 +1,23 @@
+import { useRouter } from "next/navigation";
+
 import { useCallback, useEffect, useState } from "react";
-import { IMovieProps } from "@/interfaces/IMovies.interface";
+
+import { getFilms } from "@/services/query";
+
 import { UseAppDispatch, UseAppSelector } from "@/redux/store";
 import {
   handleFilmsSelected,
   handleRemoveFilm,
   handleResetState,
 } from "@/redux/slices/WeMovies/weMovies.slices";
-import { useRouter } from "next/navigation";
-import { getFilms } from "@/services/query";
+
+import { IFilmsProps } from "@/interfaces/IFilms.interface";
 
 export function useFilm() {
-  const [list, setList] = useState<IMovieProps[]>([]);
+  const [list, setList] = useState<IFilmsProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [prices, setPrices] = useState<{ [filmId: string]: number }>({});
-  const [selectedFilms, setSelectedFilms] = useState<IMovieProps[]>([]);
+  const [selectedFilms, setSelectedFilms] = useState<IFilmsProps[]>([]);
   const [addStatus, setAddStatus] = useState<{ [key: string]: boolean }>({});
   const selectedPrice = UseAppSelector(
     (state) => state.WeMoviesSlice.weMovies.filmsSelected
@@ -43,7 +47,7 @@ export function useFilm() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleFilmClick = (film: IMovieProps) => {
+  const handleFilmClick = (film: IFilmsProps) => {
     const isFilmSelected = selectedFilms.some(
       (selectedFilm) => selectedFilm.id === film.id
     );
@@ -59,7 +63,7 @@ export function useFilm() {
     }
   };
 
-  const handleCardClick = (film: any) => {
+  const handleCardClick = (film: IFilmsProps) => {
     handleFilmClick(film);
     setAddStatus((prevAddStatus) => ({
       ...prevAddStatus,
@@ -67,13 +71,13 @@ export function useFilm() {
     }));
   };
 
-  const handleQuantityChange = (filmId: string, quantity: number) => {
-    const updatedSelectedFilms = selectedPrice.map((film: any) => ({
+  const handleQuantityChange = (filmId: number, quantity: number) => {
+    const updatedSelectedFilms = selectedPrice.map((film: IFilmsProps) => ({
       ...film,
     }));
 
     const filmIndex = updatedSelectedFilms.findIndex(
-      (film: { id: string }) => film.id === filmId
+      (film: { id: number }) => film.id === filmId
     );
 
     if (filmIndex !== -1) {
@@ -95,11 +99,10 @@ export function useFilm() {
   const handleRedirectRouter = () => {
     if (selectedPrice.length > 0) {
       router.push("/finalizePurchases");
-      dispatch(handleResetState());
     }
   };
 
-  const handleRemoveFilmId = (id: string) => {
+  const handleRemoveFilmId = (id: number | string) => {
     dispatch(handleRemoveFilm(id));
   };
 

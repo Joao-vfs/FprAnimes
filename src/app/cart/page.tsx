@@ -1,7 +1,7 @@
 "use client";
 
-import CartPage from ".";
+import { SelectedFilms } from "@/components";
 
 export default function Cart() {
-  return <CartPage />;
+  return <SelectedFilms />;
 }

@@ -1,9 +1,13 @@
 import * as S from "./Cards.styles";
 
 import { THEME } from "@/global/styles/theme";
-import { Button } from "..";
-import { CartIcon } from "@/icons";
 import Text from "@/global/Typography/Text/Text";
+
+import { CartIcon } from "@/icons/cart.icon";
+
+import { ICardProps } from "@/interfaces/ICard.interface";
+
+import { Button } from "..";
 
 export default function CardsComponent({
   image,
@@ -11,7 +15,7 @@ export default function CardsComponent({
   price,
   onClick,
   add,
-}: Readonly<any>) {
+}: Readonly<ICardProps>) {
   return (
     <S.ContainerCard>
       <S.ImageFilm src={image} alt={title} />
@@ -19,7 +23,7 @@ export default function CardsComponent({
         <Text
           fontSize={THEME.fontSize.nano}
           fontWeight={THEME.fontWeight.bold}
-          color={THEME.colors.teste}
+          color={THEME.colors.quaternary}
           lineHeight={"16.34px"}
         >
           {title}

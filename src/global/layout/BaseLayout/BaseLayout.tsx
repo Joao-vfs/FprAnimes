@@ -1,21 +1,24 @@
 "use client";
 
 import React from "react";
-import { Children } from "./BaseLayout.styles";
-import { ReduxProvaider } from "@/redux/provider";
+
 import { ThemeProvider } from "styled-components";
 import { THEME } from "../../styles/theme";
 import { ResetCSS } from "../../styles/resetCss";
+import { Children } from "./BaseLayout.styles";
+
+import { ReduxProvider } from "@/redux/provider";
+
 import { Header } from "../Header";
 import Box from "../Box";
 
-const BaseLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const BaseLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ReduxProvaider>
+    <ReduxProvider>
       <ThemeProvider theme={THEME}>
         <ResetCSS />
         <Box
-          display={"flex"}
+          display="flex"
           flexDirection
           alignItems="center"
           justifyContent="center"
@@ -24,7 +27,7 @@ const BaseLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <Children>{children}</Children>
         </Box>
       </ThemeProvider>
-    </ReduxProvaider>
+    </ReduxProvider>
   );
 };
 

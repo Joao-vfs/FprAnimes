@@ -1,7 +1,8 @@
-import { IMovieProps } from "@/interfaces/IMovies.interface";
 import { api } from "./api";
 
-export const getFilms = async (): Promise<IMovieProps[]> => {
+import { IFilmsProps } from "@/interfaces/IFilms.interface";
+
+export const getFilms = async (): Promise<IFilmsProps[]> => {
   try {
     const { data } = await api.get(`/products`);
     return data;

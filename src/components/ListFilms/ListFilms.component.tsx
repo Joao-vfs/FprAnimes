@@ -1,14 +1,18 @@
 import Box from "@/global/layout/Box";
-import { Cards } from "../Cards";
+
 import { formatPrice } from "@/utils/utils";
+
+import { IListFilmsProps } from "@/interfaces/IListFilms.interface";
+
 import { Loading } from "..";
+import { Cards } from "../Cards";
 
 export default function ListFilmsComponent({
   list,
   loading,
   handleCardClick,
   addStatus,
-}: Readonly<any>) {
+}: Readonly<IListFilmsProps>) {
   return loading ? (
     <Loading />
   ) : (
@@ -17,10 +21,10 @@ export default function ListFilmsComponent({
       alignItems={"center"}
       justifyContent={"center"}
       flexWrap
-      width={"77%"}
+      maxWidth={"1283px"}
       gap={"16px"}
     >
-      {list.map((films: any) => (
+      {list.map((films) => (
         <div key={films.id}>
           <Cards
             image={films.image}

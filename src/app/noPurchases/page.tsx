@@ -1,7 +1,8 @@
 "use client";
 
-import CartPage from ".";
 import { useFilm } from "@/hooks/useHooks";
+
+import CartPage from ".";
 
 export default function Cart() {
   const { handleBackHome, loading } = useFilm();

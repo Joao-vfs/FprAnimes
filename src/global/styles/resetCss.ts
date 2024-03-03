@@ -14,13 +14,4 @@ export const ResetCSS = createGlobalStyle`
     button {
         cursor: pointer;
     }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-
-        &:hover{
-            filter: brightness(0.8);
-        }
-    }
 `;

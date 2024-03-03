@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { IWeMoviesStateProps } from "@/interfaces/IWeMoviesState.interface";
+
 const initialState = {
   weMovies: {
     filmsSelected: [],
   },
-} as any;
+} as IWeMoviesStateProps;
 
 export const WeMoviesSlice = createSlice({
   name: "weMovies",
@@ -18,7 +20,7 @@ export const WeMoviesSlice = createSlice({
     },
     handleRemoveFilm: (state, action) => {
       state.weMovies.filmsSelected = state.weMovies.filmsSelected.filter(
-        (film: { id: string }) => film.id !== action.payload
+        (film) => film.id !== action.payload
       );
     },
     handleResetState: (state) => {

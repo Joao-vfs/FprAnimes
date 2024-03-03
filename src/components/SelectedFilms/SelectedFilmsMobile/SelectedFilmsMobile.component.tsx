@@ -2,9 +2,14 @@ import * as S from "./SelectedFilmsMobile.styles";
 
 import Box from "@/global/layout/Box";
 import { THEME } from "@/global/styles/theme";
-import { formatPrice, totalPriceWithQuantity } from "@/utils/utils";
-import { TrashIcon } from "@/icons/trash.icon";
 import Text from "@/global/Typography/Text/Text";
+
+import { formatPrice, totalPriceWithQuantity } from "@/utils/utils";
+
+import { TrashIcon } from "@/icons/trash.icon";
+
+import { ISelectedFilms } from "@/interfaces/ISelectedFilms.interface";
+
 import { Button, Loading, SumQuantity } from "@/components";
 
 export function SelectedFilmsMobile({
@@ -14,7 +19,7 @@ export function SelectedFilmsMobile({
   prices,
   handleRemoveFilmId,
   handleRedirectRouter,
-}: Readonly<any>) {
+}: Readonly<ISelectedFilms>) {
   return loading ? (
     <Loading />
   ) : (
@@ -30,7 +35,7 @@ export function SelectedFilmsMobile({
       padding="16px"
       borderRadius={THEME.borderRadius.small}
     >
-      {selectedFilms?.map((moviesPurchase: any) => (
+      {selectedFilms?.map((moviesPurchase) => (
         <S.CartItemContainer key={moviesPurchase.id}>
           <S.ProductImage src={moviesPurchase.image} alt="" />
           <S.FilmDetailsContainer>

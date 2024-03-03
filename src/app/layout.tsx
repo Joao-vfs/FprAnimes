@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
+
 import BaseLayout from "@/global/layout/BaseLayout/BaseLayout";
 import StyledComponentsRegistry from "@/global/layout/StyledComponentsRegistry/StyledComponentsRegistry.registry";
 

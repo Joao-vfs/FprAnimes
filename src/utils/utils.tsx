@@ -1,3 +1,5 @@
+import { IFilmsProps } from "@/interfaces/IFilms.interface";
+
 export const formatPrice = (price: number): string => {
   const priceFixed = price?.toFixed(2);
 
@@ -12,12 +14,11 @@ export const formatPrice = (price: number): string => {
 };
 
 export const totalPriceWithQuantity = (
-  selectedFilms: any,
+  selectedFilms: IFilmsProps[],
   prices: { [filmId: string]: number }
 ): number => {
   return selectedFilms.reduce(
-    (acc: any, movie: { id: string | number; price: any }) =>
-      acc + (prices[movie.id] || movie.price),
+    (acc, movie) => acc + (prices[movie.id] || movie.price),
     0
   );
 };

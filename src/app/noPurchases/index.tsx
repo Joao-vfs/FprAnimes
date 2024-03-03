@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 import Box from "@/global/layout/Box";
-
-import WithoutItems from "@/assets/images/Group 43.svg";
 import { THEME } from "@/global/styles/theme";
 import { Button, Loading } from "@/components";
 import Text from "@/global/Typography/Text/Text";
 import { isMobile } from "@/global/isMobile/isMobile";
+
+import WithoutItems from "@/assets/images/Group 43.svg";
 
 export default function NoPurchasesPage({
   handleBackHome,

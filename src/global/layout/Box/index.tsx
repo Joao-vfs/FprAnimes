@@ -3,6 +3,7 @@
 import React from "react";
 
 import { IBoxProps } from "@/interfaces/IBox.interface";
+
 import { BoxLayout } from "./Box.layout";
 
 const Box = ({
@@ -22,6 +23,7 @@ const Box = ({
   padding,
   flexWrap,
   borderRadius,
+  ...props
 }: Readonly<IBoxProps>) => {
   return (
     <BoxLayout
@@ -40,6 +42,7 @@ const Box = ({
       padding={padding}
       flexWrap={flexWrap}
       borderRadius={borderRadius}
+      {...props}
     >
       {children}
     </BoxLayout>

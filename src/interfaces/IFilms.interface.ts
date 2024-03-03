@@ -1,4 +1,4 @@
-export interface IMovieProps  {
+export interface IFilmsProps  {
     id: number;
     title: string;
     price: number;

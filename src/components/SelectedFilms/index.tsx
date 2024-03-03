@@ -1,6 +1,7 @@
 "use client";
 
 import { useFilm } from "@/hooks/useHooks";
+
 import SelectedFilmsComponent from "./SelectedFilms.component";
 
 export function SelectedFilms() {

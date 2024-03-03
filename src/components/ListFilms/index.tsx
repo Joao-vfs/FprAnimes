@@ -1,8 +1,8 @@
 "use client";
 
-import ListFilmsComponent from "./ListFilms.component";
-
 import { useFilm } from "@/hooks/useHooks";
+
+import ListFilmsComponent from "./ListFilms.component";
 
 export function ListFilms() {
   const { list, loading, handleCardClick, addStatus } = useFilm();

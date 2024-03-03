@@ -1,16 +1,21 @@
 import { isMobile } from "@/global/isMobile/isMobile";
+
+import { ISelectedFilms } from "@/interfaces/ISelectedFilms.interface";
+
 import { SelectedFilmsMobile } from "@/components/SelectedFilms/SelectedFilmsMobile/SelectedFilmsMobile.component";
 import { SelectedFilmsWeb } from "@/components/SelectedFilms/SelectedFilmsWeb/SelectedFilmsWeb.component";
 
 export default function SelectedFilmsComponent({
+  loading,
   selectedFilms,
   handleQuantityChange,
   prices,
   handleRemoveFilmId,
   handleRedirectRouter,
-}: Readonly<any>) {
+}: Readonly<ISelectedFilms>) {
   return isMobile() ? (
     <SelectedFilmsMobile
+      loading={loading}
       selectedFilms={selectedFilms}
       handleQuantityChange={handleQuantityChange}
       prices={prices}
@@ -19,6 +24,7 @@ export default function SelectedFilmsComponent({
     />
   ) : (
     <SelectedFilmsWeb
+      loading={loading}
       selectedFilms={selectedFilms}
       handleQuantityChange={handleQuantityChange}
       prices={prices}

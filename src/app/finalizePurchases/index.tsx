@@ -1,12 +1,13 @@
 import Image from "next/image";
 
 import Box from "@/global/layout/Box";
-
-import FinalizePurchases from "@/assets/images/Group 34.svg";
 import { THEME } from "@/global/styles/theme";
-import { Button, Loading } from "@/components";
 import Text from "@/global/Typography/Text/Text";
 import { isMobile } from "@/global/isMobile/isMobile";
+
+import FinalizePurchases from "@/assets/images/Group 34.svg";
+
+import { Button, Loading } from "@/components";
 
 export default function FinalizePurchasesPage({
   handleBackHome,
